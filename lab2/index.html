@@ -25,11 +25,11 @@
     <div id="Client" class="tabcontent">
         <h3>Client Information</h3>
         <p>Tell us a bit about you.</p>
-        Tell us About Your Diet Preferences:
+        <p>Tell us About Your Diet Preferences:</p>
 
-        <br><br>
+        <br>
 
-        Choose a Diet Category:
+        <p>Choose a Diet Category:   
         <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
             <option value=""></option>
             <option value="Vegetarian">Vegetarian</option>
@@ -37,10 +37,8 @@
             <option value="GFVeg">Gluten Free & Vegetarian</option>
             <option value="None">None</option>
         </select>
-
-        <br><br>
-
-        Choose an Organic Category:
+    </p>
+       <p> Choose an Organic Category:
         <select id="organicSelect" name="organicSelect"
             onchange="populateListProductChoices('dietSelect', 'displayProduct')">
             <option value=""></option>
@@ -48,23 +46,28 @@
             <option value="NonOrganic">Non-Organic</option>
             <option value="None">None</option>
         </select>
-
+    </p>
     </div>
 
     <div id="Products" class="tabcontent">
         <h3>Your targeted products</h3>
         <p>We preselected products based on your restrictions.</p>
-        Choose items to buy:
-        <div id="displayProduct"></div>
-        <button id="addCart" type="button" class="block" onclick="selectedItems()">
+        <p>Choose items to buy:</p>
+       <div class="innertabcontent">
+        <div class="checklist" id="displayProduct"></div> 
+       </div>
+       <p> <button id="addCart" type="button" class="block" onclick="selectedItems()">
             Add selected items to cart.
         </button>
+        </p>
     </div>
 
     <div id="Cart" class="tabcontent">
         <h3>Cart</h3>
         <p>Here is your cart.</p>
-        <div id="displayCart"></div>
+        <div class="finalprice" id="displayCart">
+           
+        </div>
     </div>
 
     <script src="scripts/groceries.js"></script>
