@@ -56,7 +56,7 @@ function populateListProductChoices(slct1, slct2) {
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(`$${optionArray[i]['price']} - ${productName}`));
+		label.appendChild(document.createTextNode(`$${(Math.round(optionArray[i]['price']*100)/100).toFixed(2)} - ${productName}`));
 		s2.appendChild(label);
 
 		// create a breakline node and add in HTML DOM
@@ -83,7 +83,7 @@ function selectedItems() {
 	para.appendChild(document.createElement("br"));
 	for (i = 0; i < ele.length; i++) {
 		if (ele[i].checked) {
-			para.appendChild(document.createTextNode(`$${getProductPriceByName(ele[i].value)} - ${ele[i].value}`));
+			para.appendChild(document.createTextNode(`$${(Math.round(getProductPriceByName(ele[i].value)*100)/100).toFixed(2)} - ${ele[i].value}`));
 			para.appendChild(document.createElement("br"));
 			chosenProducts.push(ele[i].value);
 		}
@@ -91,6 +91,6 @@ function selectedItems() {
 
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode(`Total Price is $${getTotalPrice(chosenProducts)}`));
+	c.appendChild(document.createTextNode(`Total Price is $${(Math.round(getTotalPrice(chosenProducts)*100)/100).toFixed(2)}`));
 
 }
