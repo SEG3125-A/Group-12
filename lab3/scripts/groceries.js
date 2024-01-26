@@ -8,6 +8,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 0.99,
+    imgSrc: "../imgs/corn.jpg"
   },
   {
     name: "Frozen Chicken Broccoli Cheese Cutlet",
@@ -15,6 +16,7 @@ var products = [
     glutenFree: false,
     organic: false,
     price: 15.0,
+    imgSrc: "../imgs/cbc.jpg"
   },
   {
     name: "Frozen Alaskan Sole",
@@ -22,6 +24,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 20.99,
+    imgSrc: "../imgs/sole.jpg"
   },
   {
     name: "Peanut Butter (2kg)",
@@ -29,6 +32,7 @@ var products = [
     glutenFree: true,
     organic: false,
     price: 10.88,
+    imgSrc: "../imgs/peanut_butter.jpg"
   },
   {
     name: "Jam",
@@ -36,6 +40,7 @@ var products = [
     glutenFree: true,
     organic: false,
     price: 5.99,
+    imgSrc: "../imgs/jam.jpg"
   },
   {
     name: "Spring Mix",
@@ -43,6 +48,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 3.99,
+    imgSrc: "../imgs/spring_mix.jpg"
   },
   {
     name: "Frozen Buffalo Chicken Wings",
@@ -50,6 +56,7 @@ var products = [
     glutenFree: false,
     organic: false,
     price: 20.0,
+    imgSrc: "../imgs/buffalo_wings.jpg"
   },
   {
     name: "Blueberry Muffins",
@@ -57,14 +64,15 @@ var products = [
     glutenFree: false,
     organic: false,
     price: 9.99,
+    imgSrc: "../imgs/muffins.jpg"
   },
   {
     name: "Chicken Breasts",
     vegetarian: false,
     glutenFree: true,
     organic: true,
-
     price: 30.0,
+    imgSrc: "../imgs/chicken_breast.jpg"
   },
   {
     name: "Panini Ham",
@@ -72,6 +80,7 @@ var products = [
     glutenFree: true,
     organic: false,
     price: 9.99,
+    imgSrc: "../imgs/panini_ham.jpg"
   },
   {
     name: "Rotisserie Chicken",
@@ -79,6 +88,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 7.99,
+    imgSrc: "../imgs/rotisserie_chicken.jpg"
   },
   {
     name: "Broccoli",
@@ -86,6 +96,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 1.99,
+    imgSrc: "../imgs/broccoli.jpg"
   },
   {
     name: "Bread",
@@ -93,6 +104,7 @@ var products = [
     glutenFree: false,
     organic: true,
     price: 2.35,
+    imgSrc: "../imgs/bread.jpg"
   },
   {
     name: "Salmon",
@@ -100,6 +112,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 10.0,
+    imgSrc: "../imgs/salmon.jpg"
   },
 ];
 
