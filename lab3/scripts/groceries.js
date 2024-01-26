@@ -9,7 +9,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 2.99,
-    imgSrc: "../imgs/clementine.png"
+    imgSrc: "imgs/clementine.png"
   },
   {
     name: "Corn",
@@ -18,7 +18,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 0.99,
-    imgSrc: "../imgs/corn.jpg"
+    imgSrc: "imgs/corn.jpg"
   },
   {
     name: "Frozen Chicken Broccoli Cheese Cutlet",
@@ -27,7 +27,7 @@ var products = [
     glutenFree: false,
     organic: false,
     price: 15.0,
-    imgSrc: "../imgs/cbc.jpg"
+    imgSrc: "imgs/cbc.png"
   },
   {
     name: "Milk 2%",
@@ -36,7 +36,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 2.99,
-    imgSrc: "../imgs/milk.png"
+    imgSrc: "imgs/milk.png"
   },
   {
     name: "Frozen Alaskan Sole",
@@ -45,7 +45,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 20.99,
-    imgSrc: "../imgs/sole.jpg"
+    imgSrc: "imgs/sole.png"
   },
   {
     name: "Peanut Butter (2kg)",
@@ -54,7 +54,7 @@ var products = [
     glutenFree: true,
     organic: false,
     price: 10.88,
-    imgSrc: "../imgs/peanut_butter.jpg"
+    imgSrc: "imgs/peanut_butter.webp"
   },
   {
     name: "Jam",
@@ -63,7 +63,7 @@ var products = [
     glutenFree: true,
     organic: false,
     price: 5.99,
-    imgSrc: "../imgs/jam.jpg"
+    imgSrc: "imgs/jam.jpg"
   },
   {
     name: "Spring Mix",
@@ -72,7 +72,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 3.99,
-    imgSrc: "../imgs/spring_mix.jpg"
+    imgSrc: "imgs/spring_mix.jpg"
   },
   {
     name: "Frozen Buffalo Chicken Wings",
@@ -81,7 +81,7 @@ var products = [
     glutenFree: false,
     organic: false,
     price: 20.0,
-    imgSrc: "../imgs/buffalo_wings.jpg"
+    imgSrc: "imgs/frozen_buffalo_chicken_wings.jpg"
   },
   {
     name: "Blueberry Muffins",
@@ -90,7 +90,7 @@ var products = [
     glutenFree: false,
     organic: false,
     price: 9.99,
-    imgSrc: "../imgs/muffins.jpg"
+    imgSrc: "imgs/muffins.jpg"
   },
   {
     name: "Chicken Breasts",
@@ -99,7 +99,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 30.0,
-    imgSrc: "../imgs/chicken_breast.jpg"
+    imgSrc: "imgs/chicken_breasts.jpg"
   },
   {
     name: "Cookie Dough Ice Cream",
@@ -108,7 +108,7 @@ var products = [
     glutenFree: true,
     organic: false,
     price: 2.99,
-    imgSrc: "../imgs/icecream.jpg"
+    imgSrc: "imgs/icecream.jpg"
   },
   {
     name: "Panini Ham",
@@ -117,7 +117,7 @@ var products = [
     glutenFree: true,
     organic: false,
     price: 9.99,
-    imgSrc: "../imgs/panini_ham.jpg"
+    imgSrc: "imgs/panini_ham.jpg"
   },
   {
     name: "Rotisserie Chicken",
@@ -126,7 +126,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 7.99,
-    imgSrc: "../imgs/rotisserie_chicken.jpg"
+    imgSrc: "imgs/rotisserie_chicken.jpg"
   },
   {
     name: "Broccoli",
@@ -135,7 +135,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 1.99,
-    imgSrc: "../imgs/broccoli.jpg"
+    imgSrc: "imgs/broccoli.png"
   },
   {
     name: "Bread",
@@ -144,7 +144,7 @@ var products = [
     glutenFree: false,
     organic: true,
     price: 2.35,
-    imgSrc: "../imgs/bread.jpg"
+    imgSrc: "imgs/bread.jpg"
   },
   {
     name: "Salmon",
@@ -153,7 +153,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 10.0,
-    imgSrc: "../imgs/salmon.jpg"
+    imgSrc: "imgs/salmon.jpg"
   },
 ];
 
@@ -186,7 +186,6 @@ function restrictListProducts(prods, restriction, organic) {
     }
 
   }
-  console.log(product_names)
   return product_names;
 }
 

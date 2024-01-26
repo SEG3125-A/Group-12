@@ -43,6 +43,13 @@ function populateListProductChoices(slct1, slct2) {
 	// <label for="Bread">Bread/label><br>
 
 	for (i = 0; i < optionArray.length; i++) {
+		var divContainer = document.createElement("div");
+		divContainer.className = "checkboxGrocery"
+		var groceryImage = document.createElement("img");
+		groceryImage.src = optionArray[i]['imgSrc']
+		groceryImage.alt = optionArray[i]['name']
+		groceryImage.className = "groceryImageClass"
+		divContainer.appendChild(groceryImage)
 
 		var productName = optionArray[i].name;
 		// create the checkbox and add in HTML DOM
@@ -50,15 +57,14 @@ function populateListProductChoices(slct1, slct2) {
 		checkbox.type = "checkbox";
 		checkbox.name = "product";
 		checkbox.value = productName;
-		checkbox.className = "checklist"
-		s2.appendChild(checkbox);
+		divContainer.appendChild(checkbox);
 
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(`$${(Math.round(optionArray[i]['price']*100)/100).toFixed(2)} - ${productName}`));
-		s2.appendChild(label);
-
+		label.appendChild(document.createTextNode(`$${(Math.round(optionArray[i]['price'] * 100) / 100).toFixed(2)} - ${productName}`));
+		divContainer.appendChild(label);
+		s2.appendChild(divContainer)
 		// create a breakline node and add in HTML DOM
 		s2.appendChild(document.createElement("br"));
 	}
@@ -83,7 +89,7 @@ function selectedItems() {
 	para.appendChild(document.createElement("br"));
 	for (i = 0; i < ele.length; i++) {
 		if (ele[i].checked) {
-			para.appendChild(document.createTextNode(`$${(Math.round(getProductPriceByName(ele[i].value)*100)/100).toFixed(2)} - ${ele[i].value}`));
+			para.appendChild(document.createTextNode(`$${(Math.round(getProductPriceByName(ele[i].value) * 100) / 100).toFixed(2)} - ${ele[i].value}`));
 			para.appendChild(document.createElement("br"));
 			chosenProducts.push(ele[i].value);
 		}
@@ -91,6 +97,6 @@ function selectedItems() {
 
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode(`Total Price is $${(Math.round(getTotalPrice(chosenProducts)*100)/100).toFixed(2)}`));
+	c.appendChild(document.createTextNode(`Total Price is $${(Math.round(getTotalPrice(chosenProducts) * 100) / 100).toFixed(2)}`));
 
 }
