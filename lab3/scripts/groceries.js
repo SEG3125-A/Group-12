@@ -3,7 +3,17 @@
 
 var products = [
   {
+    name: "Clementine",
+    category: 'f',
+    vegetarian: true,
+    glutenFree: true,
+    organic: true,
+    price: 2.99,
+    imgSrc: "../imgs/clementine.png"
+  },
+  {
     name: "Corn",
+    category: 'v',
     vegetarian: true,
     glutenFree: true,
     organic: true,
@@ -12,6 +22,7 @@ var products = [
   },
   {
     name: "Frozen Chicken Broccoli Cheese Cutlet",
+    category: 'm',
     vegetarian: false,
     glutenFree: false,
     organic: false,
@@ -19,7 +30,17 @@ var products = [
     imgSrc: "../imgs/cbc.jpg"
   },
   {
+    name: "Milk 2%",
+    category: 'd',
+    vegetarian: true,
+    glutenFree: true,
+    organic: true,
+    price: 2.99,
+    imgSrc: "../imgs/milk.png"
+  },
+  {
     name: "Frozen Alaskan Sole",
+    category: 'm',
     vegetarian: false,
     glutenFree: true,
     organic: true,
@@ -28,6 +49,7 @@ var products = [
   },
   {
     name: "Peanut Butter (2kg)",
+    category: 'o',
     vegetarian: true,
     glutenFree: true,
     organic: false,
@@ -36,6 +58,7 @@ var products = [
   },
   {
     name: "Jam",
+    category: 'o',
     vegetarian: true,
     glutenFree: true,
     organic: false,
@@ -44,6 +67,7 @@ var products = [
   },
   {
     name: "Spring Mix",
+    category: 'v',
     vegetarian: true,
     glutenFree: true,
     organic: true,
@@ -52,6 +76,7 @@ var products = [
   },
   {
     name: "Frozen Buffalo Chicken Wings",
+    category: 'm',
     vegetarian: false,
     glutenFree: false,
     organic: false,
@@ -60,6 +85,7 @@ var products = [
   },
   {
     name: "Blueberry Muffins",
+    category: 'o',
     vegetarian: true,
     glutenFree: false,
     organic: false,
@@ -68,6 +94,7 @@ var products = [
   },
   {
     name: "Chicken Breasts",
+    category: 'm',
     vegetarian: false,
     glutenFree: true,
     organic: true,
@@ -75,7 +102,17 @@ var products = [
     imgSrc: "../imgs/chicken_breast.jpg"
   },
   {
+    name: "Cookie Dough Ice Cream",
+    category: 'd',
+    vegetarian: true,
+    glutenFree: true,
+    organic: false,
+    price: 2.99,
+    imgSrc: "../imgs/icecream.jpg"
+  },
+  {
     name: "Panini Ham",
+    category: 'm',
     vegetarian: false,
     glutenFree: true,
     organic: false,
@@ -84,6 +121,7 @@ var products = [
   },
   {
     name: "Rotisserie Chicken",
+    category: 'm',
     vegetarian: false,
     glutenFree: true,
     organic: true,
@@ -92,6 +130,7 @@ var products = [
   },
   {
     name: "Broccoli",
+    category: 'v',
     vegetarian: true,
     glutenFree: true,
     organic: true,
@@ -100,6 +139,7 @@ var products = [
   },
   {
     name: "Bread",
+    category: 'o',
     vegetarian: true,
     glutenFree: false,
     organic: true,
@@ -108,6 +148,7 @@ var products = [
   },
   {
     name: "Salmon",
+    category: 'm',
     vegetarian: false,
     glutenFree: true,
     organic: true,
