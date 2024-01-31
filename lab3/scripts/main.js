@@ -2,6 +2,10 @@
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
+function getSliderData(){
+	document.getElementById("")
+}
+
 function openInfo(evt, tabName) {
 
 	// Get all elements with class="tabcontent" and hide them
@@ -99,60 +103,7 @@ function selectedItems() {
 
 }
 
-function getLeftRightInputs(leftPointer, rightPointer) {
-	const left = parseInt(leftPointer.value, 10);
-	const right = parseInt(rightPointer.value, 10);
-	return [left, right];
-}
-
-function controlFromInput(leftSlider, fromInput, toInput, controlSlider) {
-    const [left, right] = getLeftRightInputs(fromInput, toInput);
-    fillSlider(fromInput, toInput, '#FFFFFF', '#CF9FFF', controlSlider);
-    if (left > right) {
-        leftSlider.value = right;
-        fromInput.value = right;
-    } else {
-        leftSlider.value = left;
-    }
-}
-    
-function controlToInput(rightSlider, fromInput, toInput, controlSlider) {
-    const [left, right] = getLeftRightInputs(fromInput, toInput);
-    fillSlider(fromInput, toInput, '#FFFFFF', '#CF9FFF', controlSlider);
-    setToggleAccessible(toInput);
-    if (right <= left) {
-        rightSlider.value = right;
-        toInput.value = right;
-    } else {
-        toInput.value = left;
-    }
-}
-
-function controlleftSlider(leftSlider, rightSlider, fromInput) {
-  const [from, to] = getLeftRightInputs(leftSlider, rightSlider);
-  fillSlider(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
-  if (from > to) {
-    leftSlider.value = to;
-    fromInput.value = to;
-  } else {
-    fromInput.value = from;
-  }
-}
-
-function controlrightSlider(leftSlider, rightSlider, toInput) {
-  const [from, to] = getLeftRightInputs(leftSlider, rightSlider);
-  fillSlider(leftSlider, rightSlider, '##FFFFFF', '#CF9FFF', rightSlider);
-  setToggleAccessible(rightSlider);
-  if (from <= to) {
-    rightSlider.value = to;
-    toInput.value = to;
-  } else {
-    toInput.value = from;
-    rightSlider.value = from;
-  }
-}
-
-function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
+function fillSliderColour(from, to, sliderColor, rangeColor, controlSlider) {
     const rangeDistance = to.max-to.min;
     const fromPosition = from.value - to.min;
     const toPosition = to.value - to.min;
@@ -166,6 +117,59 @@ function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
       ${sliderColor} 100%)`;
 }
 
+function getLeftRightInputs(leftPointer, rightPointer) {
+	const left = parseInt(leftPointer.value, 10);
+	const right = parseInt(rightPointer.value, 10);
+	return [left, right];
+}
+
+function controlRightInput(leftSlider, minInput, maxInput, controlSlider) {
+    const [left, right] = getLeftRightInputs(minInput, maxInput);
+    fillSliderColour(minInput, maxInput, '#FFFFFF', '#CF9FFF', controlSlider);
+    if (left > right) {
+        leftSlider.value = right;
+        minInput.value = right;
+    } else {
+        leftSlider.value = left;
+    }
+}
+    
+function controlLeftInput(rightSlider, minInput, maxInput, controlSlider) {
+    const [left, right] = getLeftRightInputs(minInput, maxInput);
+    fillSliderColour(minInput, maxInput, '#FFFFFF', '#CF9FFF', controlSlider);
+    setToggleAccessible(maxInput);
+    if (right <= left) {
+        rightSlider.value = right;
+        maxInput.value = right;
+    } else {
+        maxInput.value = left;
+    }
+}
+
+function controLeftSlider(leftSlider, rightSlider, minInput) {
+  const [left, right] = getLeftRightInputs(leftSlider, rightSlider);
+  fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
+  if (left > right) {
+    leftSlider.value = right;
+    minInput.value = right;
+  } else {
+    minInput.value = left;
+  }
+}
+
+function controlRightSlider(leftSlider, rightSlider, maxInput) {
+  const [left, right] = getLeftRightInputs(leftSlider, rightSlider);
+  fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
+  setToggleAccessible(rightSlider);
+  if (left <= right) {
+    rightSlider.value = right;
+    maxInput.value = right;
+  } else {
+    maxInput.value = left;
+    rightSlider.value = left;
+  }
+}
+
 function setToggleAccessible(currentTarget) {
   const rightSlider = document.querySelector('#rightSlider');
   if (Number(currentTarget.value) <= 0 ) {
@@ -177,12 +181,12 @@ function setToggleAccessible(currentTarget) {
 
 const leftSlider = document.querySelector('#leftSlider');
 const rightSlider = document.querySelector('#rightSlider');
-const fromInput = document.querySelector('#fromInput');
-const toInput = document.querySelector('#toInput');
-fillSlider(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
+const minInput = document.querySelector('#minInput');
+const maxInput = document.querySelector('#maxInput');
+fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
 setToggleAccessible(rightSlider);
 
-leftSlider.oninput = () => controlleftSlider(leftSlider, rightSlider, fromInput);
-rightSlider.oninput = () => controlrightSlider(leftSlider, rightSlider, toInput);
-fromInput.oninput = () => controlFromInput(leftSlider, fromInput, toInput, rightSlider);
-toInput.oninput = () => controlToInput(rightSlider, fromInput, toInput, rightSlider);
+leftSlider.oninput = () => controLeftSlider(leftSlider, rightSlider, minInput);
+rightSlider.oninput = () => controlRightSlider(leftSlider, rightSlider, maxInput);
+minInput.oninput = () => controlRightInput(leftSlider, minInput, maxInput, rightSlider);
+maxInput.oninput = () => controlLeftInput(rightSlider, minInput, maxInput, rightSlider);

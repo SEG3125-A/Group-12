@@ -138,6 +138,7 @@ p {
 .slider_control {
   position: relative;
   min-height: 30px;
+  border-radius: 5px;
 }
 
 .form_control {
