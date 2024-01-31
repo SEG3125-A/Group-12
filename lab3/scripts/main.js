@@ -34,7 +34,7 @@ function openInfo(evt, tabName) {
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2) {
+function populateListProductChoices(slct1, slct2, minPrice=0, maxPrice=0) {
 	var s1 = document.getElementById(slct1);
 	var s2 = document.getElementById(slct2);
 	var organic = document.getElementById("organicSelect");
@@ -43,7 +43,7 @@ function populateListProductChoices(slct1, slct2) {
 	s2.innerHTML = "";
 
 	// obtain a reduced list of products based on restrictions
-	var optionArray = restrictListProducts(products, s1.value, organic.value);
+	var optionArray = restrictListProducts(products, s1.value, organic.value, minPrice, maxPrice);
 
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
@@ -51,12 +51,19 @@ function populateListProductChoices(slct1, slct2) {
 
 	for (i = 0; i < optionArray.length; i++) {
 		var divContainer = document.createElement("div");
+
+		var groceryImageContainer = document.createElement("div");
+		groceryImageContainer.className = "groceryImageContainer"
+
+
 		divContainer.className = "checkboxGrocery"
 		var groceryImage = document.createElement("img");
 		groceryImage.src = optionArray[i]['imgSrc']
 		groceryImage.alt = optionArray[i]['name']
 		groceryImage.className = "groceryImageClass"
-		divContainer.appendChild(groceryImage)
+		groceryImageContainer.appendChild(groceryImage)
+
+		divContainer.appendChild(groceryImageContainer)
 
 		var productName = optionArray[i].name;
 		// create the checkbox and add in HTML DOM
@@ -72,8 +79,6 @@ function populateListProductChoices(slct1, slct2) {
 		label.appendChild(document.createTextNode(`$${(Math.round(optionArray[i]['price'] * 100) / 100).toFixed(2)} - ${productName}`));
 		divContainer.appendChild(label);
 		s2.appendChild(divContainer)
-		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br"));
 	}
 }
 

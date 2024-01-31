@@ -30,7 +30,7 @@
         <br>
 
         <p>Choose a Diet Category:
-            <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+            <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct', 0, 30)">
                 <option value=""></option>
                 <option value="Vegetarian">Vegetarian</option>
                 <option value="GlutenFree">Gluten Free</option>
@@ -40,7 +40,7 @@
         </p>
         <p> Choose an Organic Category:
             <select id="organicSelect" name="organicSelect"
-                onchange="populateListProductChoices('dietSelect', 'displayProduct')">
+                onchange="populateListProductChoices('dietSelect', 'displayProduct', 0, 30)">
                 <option value=""></option>
                 <option value="Organic">Organic</option>
                 <option value="NonOrganic">Non-Organic</option>
