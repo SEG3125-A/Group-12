@@ -139,3 +139,41 @@ p {
   right: 0;
   padding-right: 10px;
 }
+
+.slider {
+  -webkit-appearance: none;
+  width: 25%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: purple;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: purple;
+  cursor: pointer;
+}
+
+/* https://stackoverflow.com/questions/32926670/styling-the-text-on-each-side-of-a-input-type-range-tag */
+.leftRange, .rightRange {
+  display: inline-block;
+  width: 50px;
+  padding: 2px;
+  text-align: center;
+}
