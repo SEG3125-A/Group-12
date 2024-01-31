@@ -22,8 +22,6 @@ function openInfo(evt, tabName) {
 
 }
 
-
-
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
@@ -100,3 +98,91 @@ function selectedItems() {
 	c.appendChild(document.createTextNode(`Total Price is $${(Math.round(getTotalPrice(chosenProducts) * 100) / 100).toFixed(2)}`));
 
 }
+
+function getLeftRightInputs(leftPointer, rightPointer) {
+	const left = parseInt(leftPointer.value, 10);
+	const right = parseInt(rightPointer.value, 10);
+	return [left, right];
+}
+
+function controlFromInput(leftSlider, fromInput, toInput, controlSlider) {
+    const [left, right] = getLeftRightInputs(fromInput, toInput);
+    fillSlider(fromInput, toInput, '#FFFFFF', '#CF9FFF', controlSlider);
+    if (left > right) {
+        leftSlider.value = right;
+        fromInput.value = right;
+    } else {
+        leftSlider.value = left;
+    }
+}
+    
+function controlToInput(rightSlider, fromInput, toInput, controlSlider) {
+    const [left, right] = getLeftRightInputs(fromInput, toInput);
+    fillSlider(fromInput, toInput, '#FFFFFF', '#CF9FFF', controlSlider);
+    setToggleAccessible(toInput);
+    if (right <= left) {
+        rightSlider.value = right;
+        toInput.value = right;
+    } else {
+        toInput.value = left;
+    }
+}
+
+function controlleftSlider(leftSlider, rightSlider, fromInput) {
+  const [from, to] = getLeftRightInputs(leftSlider, rightSlider);
+  fillSlider(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
+  if (from > to) {
+    leftSlider.value = to;
+    fromInput.value = to;
+  } else {
+    fromInput.value = from;
+  }
+}
+
+function controlrightSlider(leftSlider, rightSlider, toInput) {
+  const [from, to] = getLeftRightInputs(leftSlider, rightSlider);
+  fillSlider(leftSlider, rightSlider, '##FFFFFF', '#CF9FFF', rightSlider);
+  setToggleAccessible(rightSlider);
+  if (from <= to) {
+    rightSlider.value = to;
+    toInput.value = to;
+  } else {
+    toInput.value = from;
+    rightSlider.value = from;
+  }
+}
+
+function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
+    const rangeDistance = to.max-to.min;
+    const fromPosition = from.value - to.min;
+    const toPosition = to.value - to.min;
+    controlSlider.style.background = `linear-gradient(
+      to right,
+      ${sliderColor} 0%,
+      ${sliderColor} ${(fromPosition)/(rangeDistance)*100}%,
+      ${rangeColor} ${((fromPosition)/(rangeDistance))*100}%,
+      ${rangeColor} ${(toPosition)/(rangeDistance)*100}%, 
+      ${sliderColor} ${(toPosition)/(rangeDistance)*100}%, 
+      ${sliderColor} 100%)`;
+}
+
+function setToggleAccessible(currentTarget) {
+  const rightSlider = document.querySelector('#rightSlider');
+  if (Number(currentTarget.value) <= 0 ) {
+    rightSlider.style.zIndex = 2;
+  } else {
+    rightSlider.style.zIndex = 0;
+  }
+}
+
+const leftSlider = document.querySelector('#leftSlider');
+const rightSlider = document.querySelector('#rightSlider');
+const fromInput = document.querySelector('#fromInput');
+const toInput = document.querySelector('#toInput');
+fillSlider(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
+setToggleAccessible(rightSlider);
+
+leftSlider.oninput = () => controlleftSlider(leftSlider, rightSlider, fromInput);
+rightSlider.oninput = () => controlrightSlider(leftSlider, rightSlider, toInput);
+fromInput.oninput = () => controlFromInput(leftSlider, fromInput, toInput, rightSlider);
+toInput.oninput = () => controlToInput(rightSlider, fromInput, toInput, rightSlider);
