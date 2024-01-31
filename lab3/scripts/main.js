@@ -2,8 +2,19 @@
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
+getSliderData();
+
 function getSliderData(){
-	document.getElementById("")
+	var leftSlider = document.getElementById("minInput");
+	var rightSlider = document.getElementById("maxInput");
+
+	leftSlider.addEventListener("change", e => {
+		populateListProductChoices('dietSelect', 'displayProduct', leftSlider.value);
+	})
+
+	rightSlider.addEventListener("change", e => {
+		populateListProductChoices('dietSelect', 'displayProduct', rightSlider.value);
+	})
 }
 
 function openInfo(evt, tabName) {
@@ -29,7 +40,7 @@ function openInfo(evt, tabName) {
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2) {
+function populateListProductChoices(slct1, slct2, minPrice=0, maxPrice=0) {
 	var s1 = document.getElementById(slct1);
 	var s2 = document.getElementById(slct2);
 	var organic = document.getElementById("organicSelect");
@@ -38,7 +49,7 @@ function populateListProductChoices(slct1, slct2) {
 	s2.innerHTML = "";
 
 	// obtain a reduced list of products based on restrictions
-	var optionArray = restrictListProducts(products, s1.value, organic.value);
+	var optionArray = restrictListProducts(products, s1.value, organic.value, minPrice, maxPrice);
 
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">

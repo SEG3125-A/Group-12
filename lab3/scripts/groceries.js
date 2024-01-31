@@ -167,7 +167,7 @@ products.sort(compareByPrice);
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction, organic) {
+function restrictListProducts(prods, restriction, organic, minPrice, maxPrice) {
   let product_names = [];
   for (let i = 0; i < prods.length; i += 1) {
     if (prods[i].organic && organic == "NonOrganic") {
@@ -176,13 +176,25 @@ function restrictListProducts(prods, restriction, organic) {
       continue
     }
     if (restriction == "Vegetarian" && prods[i].vegetarian == true) {
-      product_names.push(prods[i]);
+
+      if(prods[i].price >= minPrice && prods[i].price <= maxPrice){
+        product_names.push(prods[i]);
+      }    
     } else if (restriction == "GlutenFree" && prods[i].glutenFree == true) {
-      product_names.push(prods[i]);
+
+        if(prods[i].price >= minPrice && prods[i].price <= maxPrice){
+          product_names.push(prods[i]);
+        } 
     } else if ((restriction == "GFVeg") && (prods[i].glutenFree == true) && (prods[i].vegetarian == true)) {
-      product_names.push(prods[i]);
+
+        if(prods[i].price >= minPrice && prods[i].price <= maxPrice){
+          product_names.push(prods[i]);
+        } 
     } else if (restriction == "None") {
-      product_names.push(prods[i]);
+
+        if(prods[i].price >= minPrice && prods[i].price <= maxPrice){
+          product_names.push(prods[i]);
+        } 
     }
 
   }
