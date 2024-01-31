@@ -23,36 +23,34 @@
 
     <!-- Tab content -->
     <div id="Client" class="tabcontent">
-        <h3>Client Information</h3>
-        <p>Tell us a bit about you.</p>
-        <p>Tell us About Your Diet Preferences:</p>
+        <h3>We Appreciate You For Choosing Group 12 Mart!</h3>
+        <p>If you would like to sort the items based on your diet prefences you may do so below:</p>
 
-        <br>
 
-        <p>Choose a Diet Category:
+        <p>Which category of products would you like to search for? 
             <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
                 <option value=""></option>
-                <option value="Vegetarian">Vegetarian</option>
-                <option value="GlutenFree">Gluten Free</option>
-                <option value="GFVeg">Gluten Free & Vegetarian</option>
-                <option value="None">None</option>
+                <option value="Vegetarian">Vegetarian Options</option>
+                <option value="GlutenFree">Gluten Free Options</option>
+                <option value="GFVeg">Gluten Free & Vegetarian Options</option>
+                <option value="None">No Preference</option>
             </select>
         </p>
-        <p> Choose an Organic Category:
+        <p> Are you looking for Organic, Non-Organic or have no preference? 
             <select id="organicSelect" name="organicSelect"
                 onchange="populateListProductChoices('dietSelect', 'displayProduct')">
                 <option value=""></option>
-                <option value="Organic">Organic</option>
-                <option value="NonOrganic">Non-Organic</option>
-                <option value="None">None</option>
+                <option value="Organic">Organic Options</option>
+                <option value="NonOrganic">Non-Organic Options</option>
+                <option value="None">No Preference</option>
             </select>
         </p>
     </div>
 
     <div id="Products" class="tabcontent">
-        <h3>Your targeted products</h3>
-        <p>We preselected products based on your restrictions.</p>
-        <p>Choose items to buy:</p>
+        <h3>Products</h3>
+        <p>Here are the related items to your preferences:</p>
+        <p>Select the items you would like to add to your cart:</p>
         <div class="innertabcontent">
             <div class="checklist" id="displayProduct"></div>
         </div>
@@ -63,8 +61,8 @@
     </div>
 
     <div id="Cart" class="tabcontent">
-        <h3>Cart</h3>
-        <p>Here is your cart.</p>
+        <h3>Checkout</h3>
+        <p>These are the items you have selected to be checked out!</p>
         <div class="finalprice" id="displayCart">
 
         </div>
