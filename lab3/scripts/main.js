@@ -44,12 +44,19 @@ function populateListProductChoices(slct1, slct2) {
 
 	for (i = 0; i < optionArray.length; i++) {
 		var divContainer = document.createElement("div");
+
+		var groceryImageContainer = document.createElement("div");
+		groceryImageContainer.className = "groceryImageContainer"
+
+
 		divContainer.className = "checkboxGrocery"
 		var groceryImage = document.createElement("img");
 		groceryImage.src = optionArray[i]['imgSrc']
 		groceryImage.alt = optionArray[i]['name']
 		groceryImage.className = "groceryImageClass"
-		divContainer.appendChild(groceryImage)
+		groceryImageContainer.appendChild(groceryImage)
+
+		divContainer.appendChild(groceryImageContainer)
 
 		var productName = optionArray[i].name;
 		// create the checkbox and add in HTML DOM
@@ -65,8 +72,6 @@ function populateListProductChoices(slct1, slct2) {
 		label.appendChild(document.createTextNode(`$${(Math.round(optionArray[i]['price'] * 100) / 100).toFixed(2)} - ${productName}`));
 		divContainer.appendChild(label);
 		s2.appendChild(divContainer)
-		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br"));
 	}
 }
 
