@@ -16,9 +16,9 @@
 
     <!-- Tab links, each one with an onclick event associated with it -->
     <div class="tab">
-        <button class="tablinks active active" onclick="openInfo(event, 'Client')">Client</button>
-        <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-        <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+        <button  id="client" class="tablinks active active" onclick="openInfo(event, 'Client')">Client</button>
+        <button id="products"class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+        <button id="cart"class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
     </div>
 
     <!-- Tab content -->
@@ -45,6 +45,7 @@
                 <option value="None">No Preference</option>
             </select>
         </p>
+        <p><button id="addCart" type="button" class="block" onclick="document.getElementById('products').click()">Filter</button></p>
     </div>
 
     <div id="Products" class="tabcontent">
@@ -54,7 +55,7 @@
         <div class="innertabcontent">
             <div class="checklist" id="displayProduct"></div>
         </div>
-        <p> <button id="addCart" type="button" class="block" onclick="selectedItems()">
+        <p> <button id="addCart" type="button" class="block" onclick="selectedItems(); document.getElementById('cart').click()">
                 Add selected items to cart.
             </button>
         </p>

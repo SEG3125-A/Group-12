@@ -99,4 +99,7 @@ function selectedItems() {
 	c.appendChild(para);
 	c.appendChild(document.createTextNode(`Total Price is $${(Math.round(getTotalPrice(chosenProducts) * 100) / 100).toFixed(2)}`));
 
+
+
 }
+
