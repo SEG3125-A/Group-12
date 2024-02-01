@@ -18,7 +18,7 @@ var products = [
     glutenFree: true,
     organic: true,
     price: 0.99,
-    imgSrc: "imgs/corn.jpg"
+    imgSrc: "imgs/Corn.jpg"
   },
   {
     name: "Frozen Chicken Broccoli Cheese Cutlet",
