@@ -30,7 +30,7 @@
         <div class="dietQuestion">
             <p>Choose a Diet Category:&nbsp
                 <select id="dietSelect" name="dietSelect"
-                    onchange="populateListProductChoices(this.id, 'displayProduct', 0, 30)">
+                    onchange="populateListProductChoices(this.id, 'displayProduct')">
                     <option value=""></option>
                     <option value="Vegetarian">Vegetarian Options</option>
                     <option value="GlutenFree">Gluten Free Options</option>
@@ -41,7 +41,7 @@
             <p>
                 Are you looking for Organic, Non-Organic, or have no preference?&nbsp
                 <select id="organicSelect" name="organicSelect"
-                    onchange="populateListProductChoices('dietSelect', 'displayProduct', 0, 30)">
+                    onchange="populateListProductChoices('dietSelect', 'displayProduct')">
                     <option value=""></option>
                     <option value="Organic">Organic Options</option>
                     <option value="NonOrganic">Non-Organic Options</option>
@@ -57,20 +57,60 @@
         <h3>Products</h3>
         <p>Here are the related items to your preferences:</p>
         <p>Select the items you would like to add to your cart:</p>
-        <div class="slider_container">
-            <p>Sort by Price</p>
-            <div class="slider_control">
-                <input id="leftSlider" type="range" value="1" min="0" max="31" />
-                <input id="rightSlider" type="range" value="30" min="0" max="31" />
-            </div>
-            <div class="form_control">
-                <div class="form_control_container">
-                    <div class="form_control_container__time">Minimum Price($)</div>
-                    <h3 id="minInput">1</h3>
+        <div class="filterOptionsContainer">
+            <div class="foodFiltersContainer">
+                <!-- from https://www.w3schools.com/howto/howto_css_custom_checkbox.asp -->
+                <div class="switchContainer">
+                    <label class="switch">
+                        <input type="checkbox" onclick="filterGroceries()" id="Vegetables" checked="true">
+                        <span class="slider round"></span>
+                    </label>
+                    <span style="font-family: sans-serif; color: #232946;">Vegetables</span>
                 </div>
-                <div class="form_control_container">
-                    <div class="form_control_container__time">Maximum Price($)</div>
-                    <h3 id="maxInput">30</h3>
+                <div class="switchContainer">
+                    <label class="switch">
+                        <input type="checkbox" onclick="filterGroceries()" id="Fruits" checked="true">
+                        <span class="slider round"></span>
+                    </label>
+                    <span style="font-family: sans-serif; color: #232946;">Fruits</span>
+                </div>
+                <div class="switchContainer">
+                    <label class="switch">
+                        <input type="checkbox" onclick="filterGroceries()" id="Dairy" checked="true">
+                        <span class="slider round"></span>
+                    </label>
+                    <span style="font-family: sans-serif; color: #232946;">Dairy</span>
+                </div>
+                <div class="switchContainer">
+                    <label class="switch">
+                        <input type="checkbox" onclick="filterGroceries()" id="Meats" checked="true">
+                        <span class="slider round"></span>
+                    </label>
+                    <span style="font-family: sans-serif; color: #232946;">Meats</span>
+                </div>
+                <div class="switchContainer">
+                    <label class="switch">
+                        <input type="checkbox" onclick="filterGroceries()" id="Other" checked="true">
+                        <span class="slider round"></span>
+                    </label>
+                    <span style="font-family: sans-serif; color: #232946;">Other</span>
+                </div>
+            </div>
+            <div class="slider_container">
+                <p>Sort by Price</p>
+                <div class="slider_control">
+                    <input id="leftSlider" type="range" value="0" min="0" max="31" />
+                    <input id="rightSlider" type="range" value="31" min="0" max="31" />
+                </div>
+                <div class="form_control">
+                    <div class="form_control_container">
+                        <div class="form_control_container__time">Minimum Price($)</div>
+                        <h3 id="minInput">0</h3>
+                    </div>
+                    <div class="form_control_container">
+                        <div class="form_control_container__time">Maximum Price($)</div>
+                        <h3 id="maxInput">31</h3>
+                    </div>
                 </div>
             </div>
         </div>

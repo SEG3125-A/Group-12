@@ -4,10 +4,10 @@
 
 
 document.getElementById("leftSlider").addEventListener("change", e => {
-	populateListProductChoices('dietSelect', 'displayProduct', leftSlider.value, rightSlider.value);
+	populateListProductChoices('dietSelect', 'displayProduct');
 });
 document.getElementById("rightSlider").addEventListener("change", e => {
-	populateListProductChoices('dietSelect', 'displayProduct', leftSlider.value, rightSlider.value);
+	populateListProductChoices('dietSelect', 'displayProduct');
 });
 
 function openInfo(evt, tabName) {
@@ -33,7 +33,33 @@ function openInfo(evt, tabName) {
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2, minPrice = 1, maxPrice = 30) {
+function populateListProductChoices(slct1, slct2) {
+	var minPrice = leftSlider.value
+	var maxPrice = rightSlider.value
+
+	const v = document.querySelector("#Vegetables")
+	const f = document.querySelector("#Fruits")
+	const d = document.querySelector("#Dairy")
+	const m = document.querySelector("#Meats")
+	const o = document.querySelector("#Other")
+
+	var filters = ""
+	if (v.checked) {
+		filters += 'v'
+	}
+	if (f.checked) {
+		filters += 'f'
+	}
+	if (d.checked) {
+		filters += 'd'
+	}
+	if (m.checked) {
+		filters += 'm'
+	}
+	if (o.checked) {
+		filters += 'o'
+	}
+
 	var s1 = document.getElementById(slct1);
 	var s2 = document.getElementById(slct2);
 	var organic = document.getElementById("organicSelect");
@@ -42,7 +68,7 @@ function populateListProductChoices(slct1, slct2, minPrice = 1, maxPrice = 30) {
 	s2.innerHTML = "";
 
 	// obtain a reduced list of products based on restrictions
-	var optionArray = restrictListProducts(products, s1.value, organic.value, minPrice, maxPrice);
+	var optionArray = restrictListProducts(products, s1.value, organic.value, minPrice, maxPrice, filters);
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
 	// <label for="Bread">Bread/label><br>
@@ -173,6 +199,10 @@ function setToggleAccessible(currentTarget) {
 	} else {
 		rightSlider.style.zIndex = 0;
 	}
+}
+
+function filterGroceries() {
+	populateListProductChoices('dietSelect', 'displayProduct');
 }
 
 const leftSlider = document.querySelector('#leftSlider');
