@@ -12,40 +12,45 @@
     </h1>
 </div>
 
-<body onload="openInfo(event, 'Client')">
+<body onload="openInfo(event, 'Client'); populateListProductChoices('dietSelect', 'displayProduct')">
 
     <!-- Tab links, each one with an onclick event associated with it -->
     <div class="tab">
-        <button  id="client" class="tablinks active active" onclick="openInfo(event, 'Client')">Client</button>
-        <button id="products"class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-        <button id="cart"class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+        <button id="client" class="tablinks active active" onclick="openInfo(event, 'Client')">Client</button>
+        <button id="products" class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+        <button id="cart" class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
     </div>
 
     <!-- Tab content -->
     <div id="Client" class="tabcontent">
-        <h3>We Appreciate You For Choosing Group 12 Mart!</h3>
-        <p>If you would like to sort the items based on your diet prefences you may do so below:</p>
+        <h3>We appreciate you for choosing Group 12 Mart!</h3>
+        <p>If you would like to sort the items based on your diet preferences you may do so below:</p>
 
 
-        <p>Choose a Diet Category:
-            <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct', 0, 30)">
-                <option value=""></option>
-                <option value="Vegetarian">Vegetarian Options</option>
-                <option value="GlutenFree">Gluten Free Options</option>
-                <option value="GFVeg">Gluten Free & Vegetarian Options</option>
-                <option value="None">No Preference</option>
-            </select>
-        </p>
-        <p> Are you looking for Organic, Non-Organic or have no preference? 
-            <select id="organicSelect" name="organicSelect"
-                onchange="populateListProductChoices('dietSelect', 'displayProduct', 0, 30)">
-                <option value=""></option>
-                <option value="Organic">Organic Options</option>
-                <option value="NonOrganic">Non-Organic Options</option>
-                <option value="None">No Preference</option>
-            </select>
-        </p>
-        <p><button id="addCart" type="button" class="block" onclick="document.getElementById('products').click()">Filter</button></p>
+        <div class="dietQuestion">
+            <p>Choose a Diet Category:&nbsp
+                <select id="dietSelect" name="dietSelect"
+                    onchange="populateListProductChoices(this.id, 'displayProduct', 0, 30)">
+                    <option value=""></option>
+                    <option value="Vegetarian">Vegetarian Options</option>
+                    <option value="GlutenFree">Gluten Free Options</option>
+                    <option value="GFVeg">Gluten Free & Vegetarian Options</option>
+                    <option value="None">No Preference</option>
+                </select>
+            </p>
+            <p>
+                Are you looking for Organic, Non-Organic, or have no preference?&nbsp
+                <select id="organicSelect" name="organicSelect"
+                    onchange="populateListProductChoices('dietSelect', 'displayProduct', 0, 30)">
+                    <option value=""></option>
+                    <option value="Organic">Organic Options</option>
+                    <option value="NonOrganic">Non-Organic Options</option>
+                    <option value="None">No Preference</option>
+                </select>
+            </p>
+        </div>
+        <p><button id="addCart" type="button" class="block"
+                onclick="document.getElementById('products').click()">Filter</button></p>
     </div>
 
     <div id="Products" class="tabcontent">
@@ -55,17 +60,17 @@
         <div class="slider_container">
             <p>Sort by Price</p>
             <div class="slider_control">
-                <input id="leftSlider" type="range" value="1" min="1" max="30"/>
-                <input id="rightSlider" type="range" value="30" min="1" max="30"/>
+                <input id="leftSlider" type="range" value="1" min="1" max="30" />
+                <input id="rightSlider" type="range" value="30" min="1" max="30" />
             </div>
             <div class="form_control">
                 <div class="form_control_container">
                     <div class="form_control_container__time">Minimum Price($)</div>
-                    <input class="form_control_input" type="number" id="minInput" value="1" min="1" max="30"/>
+                    <input class="form_control_input" type="number" id="minInput" value="1" min="1" max="30" />
                 </div>
                 <div class="form_control_container">
                     <div class="form_control_container__time">Maximum Price($)</div>
-                    <input class="form_control_input" type="number" id="maxInput" value="30" min="1" max="30"/>
+                    <input class="form_control_input" type="number" id="maxInput" value="30" min="1" max="30" />
                 </div>
             </div>
         </div>
@@ -75,7 +80,8 @@
         <div class="innertabcontent">
             <div class="checklist" id="displayProduct"></div>
         </div>
-        <p> <button id="addCart" type="button" class="block" onclick="selectedItems(); document.getElementById('cart').click()">
+        <p> <button id="addCart" type="button" class="block"
+                onclick="selectedItems(); document.getElementById('cart').click()">
                 Add selected items to cart.
             </button>
         </p>
@@ -89,8 +95,8 @@
         </div>
     </div>
 
-    <script src="scripts/groceries.js"></script>
-    <script src="scripts/main.js"></script>
+    <script defer src="scripts/groceries.js"></script>
+    <script defer src="scripts/main.js"></script>
     <div class="foot">
         <p id="signature">Site Created by Group 12, Arthur Wang, Kaitlyn Wong, Harman Sekhon, Sooriya Radhakrishnan
         </p>

@@ -237,6 +237,12 @@ input[type="range"] {
   z-index: 1;
 }
 
+.dietQuestion {
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+}
+
 * {
   font-weight: bold;
 }

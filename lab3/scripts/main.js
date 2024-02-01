@@ -3,12 +3,11 @@
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
 
 
-document.getElementById("minInput").addEventListener("change", e => {
-	populateListProductChoices('dietSelect', 'displayProduct', leftSlider.value,);
+document.getElementById("leftSlider").addEventListener("change", e => {
+	populateListProductChoices('dietSelect', 'displayProduct', leftSlider.value, rightSlider.value);
 });
-document.getElementById("maxInput").addEventListener("change", e => {
-	var minPrice = document.getElementById("minInput");
-	populateListProductChoices('dietSelect', 'displayProduct', minPrice.value, rightSlider.value);
+document.getElementById("rightSlider").addEventListener("change", e => {
+	populateListProductChoices('dietSelect', 'displayProduct', leftSlider.value, rightSlider.value);
 });
 
 function openInfo(evt, tabName) {
@@ -34,7 +33,8 @@ function openInfo(evt, tabName) {
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2, minPrice=0, maxPrice=0) {
+function populateListProductChoices(slct1, slct2, minPrice = 1, maxPrice = 30) {
+	console.log('ran')
 	var s1 = document.getElementById(slct1);
 	var s2 = document.getElementById(slct2);
 	var organic = document.getElementById("organicSelect");
@@ -44,7 +44,6 @@ function populateListProductChoices(slct1, slct2, minPrice=0, maxPrice=0) {
 
 	// obtain a reduced list of products based on restrictions
 	var optionArray = restrictListProducts(products, s1.value, organic.value, minPrice, maxPrice);
-
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
 	// <label for="Bread">Bread/label><br>
@@ -117,16 +116,16 @@ function selectedItems() {
 }
 
 function fillSliderColour(from, to, sliderColor, rangeColor, controlSlider) {
-    const rangeDistance = to.max-to.min;
-    const fromPosition = from.value - to.min;
-    const toPosition = to.value - to.min;
-    controlSlider.style.background = `linear-gradient(
+	const rangeDistance = to.max - to.min;
+	const fromPosition = from.value - to.min;
+	const toPosition = to.value - to.min;
+	controlSlider.style.background = `linear-gradient(
       to right,
       ${sliderColor} 0%,
-      ${sliderColor} ${(fromPosition)/(rangeDistance)*100}%,
-      ${rangeColor} ${((fromPosition)/(rangeDistance))*100}%,
-      ${rangeColor} ${(toPosition)/(rangeDistance)*100}%, 
-      ${sliderColor} ${(toPosition)/(rangeDistance)*100}%, 
+      ${sliderColor} ${(fromPosition) / (rangeDistance) * 100}%,
+      ${rangeColor} ${((fromPosition) / (rangeDistance)) * 100}%,
+      ${rangeColor} ${(toPosition) / (rangeDistance) * 100}%, 
+      ${sliderColor} ${(toPosition) / (rangeDistance) * 100}%, 
       ${sliderColor} 100%)`;
 }
 
@@ -137,59 +136,59 @@ function getLeftRightInputs(leftPointer, rightPointer) {
 }
 
 function controlRightInput(leftSlider, minInput, maxInput, controlSlider) {
-    const [left, right] = getLeftRightInputs(minInput, maxInput);
-    fillSliderColour(minInput, maxInput, '#FFFFFF', '#CF9FFF', controlSlider);
-    if (left > right) {
-        leftSlider.value = right;
-        minInput.value = right;
-    } else {
-        leftSlider.value = left;
-    }
+	const [left, right] = getLeftRightInputs(minInput, maxInput);
+	fillSliderColour(minInput, maxInput, '#FFFFFF', '#CF9FFF', controlSlider);
+	if (left > right) {
+		leftSlider.value = right;
+		minInput.value = right;
+	} else {
+		leftSlider.value = left;
+	}
 }
-    
+
 function controlLeftInput(rightSlider, minInput, maxInput, controlSlider) {
-    const [left, right] = getLeftRightInputs(minInput, maxInput);
-    fillSliderColour(minInput, maxInput, '#FFFFFF', '#CF9FFF', controlSlider);
-    setToggleAccessible(maxInput);
-    if (right <= left) {
-        rightSlider.value = right;
-        maxInput.value = right;
-    } else {
-        maxInput.value = left;
-    }
+	const [left, right] = getLeftRightInputs(minInput, maxInput);
+	fillSliderColour(minInput, maxInput, '#FFFFFF', '#CF9FFF', controlSlider);
+	setToggleAccessible(maxInput);
+	if (right <= left) {
+		rightSlider.value = right;
+		maxInput.value = right;
+	} else {
+		maxInput.value = left;
+	}
 }
 
 function controLeftSlider(leftSlider, rightSlider, minInput) {
-  const [left, right] = getLeftRightInputs(leftSlider, rightSlider);
-  fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
-  if (left > right) {
-    leftSlider.value = right;
-    minInput.value = right;
-  } else {
-    minInput.value = left;
-  }
+	const [left, right] = getLeftRightInputs(leftSlider, rightSlider);
+	fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
+	if (left > right) {
+		leftSlider.value = right;
+		minInput.value = right;
+	} else {
+		minInput.value = left;
+	}
 }
 
 function controlRightSlider(leftSlider, rightSlider, maxInput) {
-  const [left, right] = getLeftRightInputs(leftSlider, rightSlider);
-  fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
-  setToggleAccessible(rightSlider);
-  if (left <= right) {
-    rightSlider.value = right;
-    maxInput.value = right;
-  } else {
-    maxInput.value = left;
-    rightSlider.value = left;
-  }
+	const [left, right] = getLeftRightInputs(leftSlider, rightSlider);
+	fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
+	setToggleAccessible(rightSlider);
+	if (left <= right) {
+		rightSlider.value = right;
+		maxInput.value = right;
+	} else {
+		maxInput.value = left;
+		rightSlider.value = left;
+	}
 }
 
 function setToggleAccessible(currentTarget) {
-  const rightSlider = document.querySelector('#rightSlider');
-  if (Number(currentTarget.value) <= 0 ) {
-    rightSlider.style.zIndex = 2;
-  } else {
-    rightSlider.style.zIndex = 0;
-  }
+	const rightSlider = document.querySelector('#rightSlider');
+	if (Number(currentTarget.value) <= 0) {
+		rightSlider.style.zIndex = 2;
+	} else {
+		rightSlider.style.zIndex = 0;
+	}
 }
 
 const leftSlider = document.querySelector('#leftSlider');
