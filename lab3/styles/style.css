@@ -97,8 +97,8 @@ p {
 }
 
 .groceryImageContainer {
-  border-radius: 30px;
-  background-color: white;
+  border-radius: 10px;
+  background-color: #fffffe;
   width: 260px;
   height: 210px;
   display: flex;

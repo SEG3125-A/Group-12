@@ -34,7 +34,6 @@ function openInfo(evt, tabName) {
 // it makes each product name as the label for the checkbos
 
 function populateListProductChoices(slct1, slct2, minPrice = 1, maxPrice = 30) {
-	console.log('ran')
 	var s1 = document.getElementById(slct1);
 	var s2 = document.getElementById(slct2);
 	var organic = document.getElementById("organicSelect");
@@ -47,6 +46,13 @@ function populateListProductChoices(slct1, slct2, minPrice = 1, maxPrice = 30) {
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
 	// <label for="Bread">Bread/label><br>
+
+	if (optionArray.length == 0) {
+		var h2Text = document.createElement("h2");
+		h2Text.textContent = "No Results!"
+		h2Text.style = "text-align: center"
+		s2.appendChild(h2Text);
+	}
 
 	for (i = 0; i < optionArray.length; i++) {
 		var divContainer = document.createElement("div");
@@ -135,37 +141,15 @@ function getLeftRightInputs(leftPointer, rightPointer) {
 	return [left, right];
 }
 
-function controlRightInput(leftSlider, minInput, maxInput, controlSlider) {
-	const [left, right] = getLeftRightInputs(minInput, maxInput);
-	fillSliderColour(minInput, maxInput, '#FFFFFF', '#CF9FFF', controlSlider);
-	if (left > right) {
-		leftSlider.value = right;
-		minInput.value = right;
-	} else {
-		leftSlider.value = left;
-	}
-}
 
-function controlLeftInput(rightSlider, minInput, maxInput, controlSlider) {
-	const [left, right] = getLeftRightInputs(minInput, maxInput);
-	fillSliderColour(minInput, maxInput, '#FFFFFF', '#CF9FFF', controlSlider);
-	setToggleAccessible(maxInput);
-	if (right <= left) {
-		rightSlider.value = right;
-		maxInput.value = right;
-	} else {
-		maxInput.value = left;
-	}
-}
-
-function controLeftSlider(leftSlider, rightSlider, minInput) {
+function controlLeftSlider(leftSlider, rightSlider, minInput) {
 	const [left, right] = getLeftRightInputs(leftSlider, rightSlider);
 	fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
 	if (left > right) {
 		leftSlider.value = right;
-		minInput.value = right;
+		minInput.textContent = right;
 	} else {
-		minInput.value = left;
+		minInput.textContent = left;
 	}
 }
 
@@ -175,9 +159,9 @@ function controlRightSlider(leftSlider, rightSlider, maxInput) {
 	setToggleAccessible(rightSlider);
 	if (left <= right) {
 		rightSlider.value = right;
-		maxInput.value = right;
+		maxInput.textContent = right;
 	} else {
-		maxInput.value = left;
+		maxInput.textContent = left;
 		rightSlider.value = left;
 	}
 }
@@ -198,7 +182,5 @@ const maxInput = document.querySelector('#maxInput');
 fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
 setToggleAccessible(rightSlider);
 
-leftSlider.oninput = () => controLeftSlider(leftSlider, rightSlider, minInput);
+leftSlider.oninput = () => controlLeftSlider(leftSlider, rightSlider, minInput);
 rightSlider.oninput = () => controlRightSlider(leftSlider, rightSlider, maxInput);
-minInput.oninput = () => controlRightInput(leftSlider, minInput, maxInput, rightSlider);
-maxInput.oninput = () => controlLeftInput(rightSlider, minInput, maxInput, rightSlider);
