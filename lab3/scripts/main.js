@@ -144,10 +144,10 @@ function getLeftRightInputs(leftPointer, rightPointer) {
 
 function controlLeftSlider(leftSlider, rightSlider, minInput) {
 	const [left, right] = getLeftRightInputs(leftSlider, rightSlider);
-	fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
-	if (left > right) {
-		leftSlider.value = right;
-		minInput.textContent = right;
+	fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#eebbc3', rightSlider);
+	if (left >= right - 1) {
+		leftSlider.value = right - 1;
+		minInput.textContent = right - 1;
 	} else {
 		minInput.textContent = left;
 	}
@@ -155,14 +155,14 @@ function controlLeftSlider(leftSlider, rightSlider, minInput) {
 
 function controlRightSlider(leftSlider, rightSlider, maxInput) {
 	const [left, right] = getLeftRightInputs(leftSlider, rightSlider);
-	fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
+	fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#eebbc3', rightSlider);
 	setToggleAccessible(rightSlider);
-	if (left <= right) {
+	if (left < right) {
 		rightSlider.value = right;
 		maxInput.textContent = right;
 	} else {
-		maxInput.textContent = left;
-		rightSlider.value = left;
+		maxInput.textContent = left + 1;
+		rightSlider.value = left + 1;
 	}
 }
 
@@ -179,7 +179,7 @@ const leftSlider = document.querySelector('#leftSlider');
 const rightSlider = document.querySelector('#rightSlider');
 const minInput = document.querySelector('#minInput');
 const maxInput = document.querySelector('#maxInput');
-fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#CF9FFF', rightSlider);
+fillSliderColour(leftSlider, rightSlider, '#FFFFFF', '#eebbc3', rightSlider);
 setToggleAccessible(rightSlider);
 
 leftSlider.oninput = () => controlLeftSlider(leftSlider, rightSlider, minInput);

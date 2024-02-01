@@ -1,7 +1,5 @@
 /* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
 
-
-
 .tab {
   overflow: hidden;
   border: 1px solid #232946;
@@ -178,57 +176,49 @@ p {
   color: white;
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   pointer-events: all;
   width: 24px;
   height: 24px;
-  background-color: #fff;
+  background-color: #fffffe;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px #C6C6C6;
+  box-shadow: 0 0 0 1px #c6c6c6;
   cursor: pointer;
+  z-index: 2;
+  position: relative;
 }
 
-input[type=range]::-moz-range-thumb {
+input[type='range']::-moz-range-thumb {
   -webkit-appearance: none;
   pointer-events: all;
   width: 12px;
   height: 12px;
   background-color: #fff;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px #C6C6C6;
-  cursor: pointer;  
+  box-shadow: 0 0 0 1px #c6c6c6;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 
-input[type=range]::-webkit-slider-thumb:hover {
+
+input[type='range']::-webkit-slider-thumb:hover {
   background: #f7f7f7;
 }
 
-input[type=range]::-webkit-slider-thumb:active {
-  box-shadow: inset 0 0 3px purple, 0 0 9px purple;
-  -webkit-box-shadow: inset 0 0 3px purple, 0 0 9px purple;
+input[type='range']::-webkit-slider-thumb:active {
+  box-shadow: inset 0 0 3px #eebbc3, 0 0 9px #eebbc3;
+  -webkit-box-shadow: inset 0 0 3px #eebbc3, 0 0 9px #eebbc3;
 }
 
-input[type="number"] {
-  color: #8a8383;
-  width: 40px;
-  height: 20px;
-  font-size: 1em;
-  border: none;
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {  
-   opacity: 1;
-}
-
-input[type="range"] {
-  -webkit-appearance: none; 
+input[type='range'] {
+  -webkit-appearance: none;
   appearance: none;
   height: 20%;
   width: 100%;
   position: absolute;
-  background-color: whitesmoke;
+  background-color: #fffffe;
   pointer-events: none;
 }
 
