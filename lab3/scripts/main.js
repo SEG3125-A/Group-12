@@ -69,6 +69,7 @@ function populateListProductChoices(slct1, slct2) {
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName;
+		label.className = "labelStyle"
 		label.appendChild(document.createTextNode(`$${(Math.round(optionArray[i]['price'] * 100) / 100).toFixed(2)} - ${productName}`));
 		divContainer.appendChild(label);
 		s2.appendChild(divContainer)
