@@ -16,40 +16,42 @@
 
     <!-- Tab links, each one with an onclick event associated with it -->
     <div class="tab">
-        <button class="tablinks active active" onclick="openInfo(event, 'Client')">Client</button>
-        <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-        <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+        <button  id="client" class="tablinks active active" onclick="openInfo(event, 'Client')">Client</button>
+        <button id="products"class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+        <button id="cart"class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
     </div>
 
     <!-- Tab content -->
     <div id="Client" class="tabcontent">
-        <h3>Client Information</h3>
-        <p>Tell us a bit about you.</p>
-        <p>Tell us About Your Diet Preferences:</p>
+        <h3>We Appreciate You For Choosing Group 12 Mart!</h3>
+        <p>If you would like to sort the items based on your diet prefences you may do so below:</p>
 
-        <br>
 
         <p>Choose a Diet Category:
             <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct', 0, 30)">
                 <option value=""></option>
-                <option value="Vegetarian">Vegetarian</option>
-                <option value="GlutenFree">Gluten Free</option>
-                <option value="GFVeg">Gluten Free & Vegetarian</option>
-                <option value="None">None</option>
+                <option value="Vegetarian">Vegetarian Options</option>
+                <option value="GlutenFree">Gluten Free Options</option>
+                <option value="GFVeg">Gluten Free & Vegetarian Options</option>
+                <option value="None">No Preference</option>
             </select>
         </p>
-        <p> Choose an Organic Category:
+        <p> Are you looking for Organic, Non-Organic or have no preference? 
             <select id="organicSelect" name="organicSelect"
                 onchange="populateListProductChoices('dietSelect', 'displayProduct', 0, 30)">
                 <option value=""></option>
-                <option value="Organic">Organic</option>
-                <option value="NonOrganic">Non-Organic</option>
-                <option value="None">None</option>
+                <option value="Organic">Organic Options</option>
+                <option value="NonOrganic">Non-Organic Options</option>
+                <option value="None">No Preference</option>
             </select>
         </p>
+        <p><button id="addCart" type="button" class="block" onclick="document.getElementById('products').click()">Filter</button></p>
     </div>
 
     <div id="Products" class="tabcontent">
+        <h3>Products</h3>
+        <p>Here are the related items to your preferences:</p>
+        <p>Select the items you would like to add to your cart:</p>
         <div class="slider_container">
             <p>Sort by Price</p>
             <div class="slider_control">
@@ -73,15 +75,15 @@
         <div class="innertabcontent">
             <div class="checklist" id="displayProduct"></div>
         </div>
-        <p> <button id="addCart" type="button" class="block" onclick="selectedItems()">
+        <p> <button id="addCart" type="button" class="block" onclick="selectedItems(); document.getElementById('cart').click()">
                 Add selected items to cart.
             </button>
         </p>
     </div>
 
     <div id="Cart" class="tabcontent">
-        <h3>Cart</h3>
-        <p>Here is your cart.</p>
+        <h3>Checkout</h3>
+        <p>These are the items you have selected to be checked out!</p>
         <div class="finalprice" id="displayCart">
 
         </div>
