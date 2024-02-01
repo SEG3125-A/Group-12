@@ -30,7 +30,7 @@
         <br>
 
         <p>Choose a Diet Category:
-            <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+            <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct', 0, 30)">
                 <option value=""></option>
                 <option value="Vegetarian">Vegetarian</option>
                 <option value="GlutenFree">Gluten Free</option>
@@ -40,7 +40,7 @@
         </p>
         <p> Choose an Organic Category:
             <select id="organicSelect" name="organicSelect"
-                onchange="populateListProductChoices('dietSelect', 'displayProduct')">
+                onchange="populateListProductChoices('dietSelect', 'displayProduct', 0, 30)">
                 <option value=""></option>
                 <option value="Organic">Organic</option>
                 <option value="NonOrganic">Non-Organic</option>
@@ -50,6 +50,23 @@
     </div>
 
     <div id="Products" class="tabcontent">
+        <div class="slider_container">
+            <p>Sort by Price</p>
+            <div class="slider_control">
+                <input id="leftSlider" type="range" value="1" min="1" max="30"/>
+                <input id="rightSlider" type="range" value="30" min="1" max="30"/>
+            </div>
+            <div class="form_control">
+                <div class="form_control_container">
+                    <div class="form_control_container__time">Minimum Price($)</div>
+                    <input class="form_control_input" type="number" id="minInput" value="1" min="1" max="30"/>
+                </div>
+                <div class="form_control_container">
+                    <div class="form_control_container__time">Maximum Price($)</div>
+                    <input class="form_control_input" type="number" id="maxInput" value="30" min="1" max="30"/>
+                </div>
+            </div>
+        </div>
         <h3>Your targeted products</h3>
         <p>We preselected products based on your restrictions.</p>
         <p>Choose items to buy:</p>
