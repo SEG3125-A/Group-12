@@ -24,16 +24,15 @@
 
 <body>
     <div class="jumbotron text-center" style="margin-bottom:0">
-        <h1>Cannon Cuts</h1>
+        <p class="display-1">Cannon Cuts</p>
         <p>Unlock Your Hair's Potential.</p>
     </div>
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">Cannon Cuts</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div class="collapse navbar-collapse d-flex justify-content-center" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About Us</a>
@@ -48,10 +47,11 @@
                     <a class="nav-link" href="#schedule-appointment">Schedule an Appointment</a>
                 </li>
             </ul>
+
         </div>
     </nav>
 
-    <div class="container mt-5"">
+    <div class="container pt-5"">
         <div class=" row">
         <div class="col-sm-8">
             <h2 id="about">About Us</h2>
@@ -66,109 +66,140 @@
                 lorem ipsum lorem ipsum lorem ipsum</p>
         </div>
     </div>
-    <div>
+
+    <div class="pt-5">
+        <h2 id="our-services">Our Services</h2>
         <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Accordion Item #1
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                        collapse
-                        plugin adds the appropriate classes that we use to style each element. These classes control the
-                        overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
-                        this with custom CSS or overriding our default variables. It's also worth noting that just about
-                        any
-                        HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Haircuts
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        Short Hair - $8<br>
+                        Medium Hair - $16<br>
+                        Long Hair - $100
                     </div>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Accordion Item #2
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
-                        collapse plugin adds the appropriate classes that we use to style each element. These classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
-                        that
-                        just about any HTML can go within the <code>.accordion-body</code>, though the transition does
-                        limit
-                        overflow.
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Colour
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Highlights - $50<br>
+                        Full Hair Dye - $200<br>
+
                     </div>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Accordion Item #3
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Beard Cuts
                     </button>
                 </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                        collapse plugin adds the appropriate classes that we use to style each element. These classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
-                        that
-                        just about any HTML can go within the <code>.accordion-body</code>, though the transition does
-                        limit
-                        overflow.
-                    </div>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    Lineups - $5<br>
+                    Trim - $10<br>
+                    Shave - $15
                 </div>
             </div>
         </div>
     </div>
 
-    <div>
+    </div>
+
+    <div class="container pt-5">
         <h2 id="our-team">Our Team</h2>
-        <div class="row">
+        <div class="row d-flex justify-content-between ">
 
             <div class="card col-sm-3 m-2" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <img class="card-img-top"
+                        src="https://cdn.discordapp.com/attachments/163767906411347968/1205255512547922060/image.png?ex=65d7b4aa&is=65c53faa&hm=859ffe50971508c9b74805c433937fe555362e6037f2197ef8144963c05078e3&"
+                        alt="Surge"></img>
+                    <h5 class="card-title">Surge R.</h5>
+                    <p class="card-text">10+ years of experience as a barber</p>
                 </div>
             </div>
             <div class="card col-sm-3 m-2" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <img src="https://cdn.discordapp.com/attachments/163767906411347968/1205246907585396769/image.png?ex=65d7aca7&is=65c537a7&hm=3796e8976ec28c128c664830d25bcba7ef01ccdf1d82235a9b7e0f36750c928d&"
+                        class="card-img-top" alt="Alphonse-Zander">
+                    <h5 class="card-title">Alphonse-Zander A.</h5>
+                    <p class="card-text">2+ years of experience in customer service</p>
                 </div>
             </div>
             <div class="card col-sm-3 m-2" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <img src="https://cdn.discordapp.com/attachments/163767906411347968/1205248680341409802/image.png?ex=65d7ae4d&is=65c5394d&hm=1309dce017dddc31c4b88cc22882b758992fcdeef9e18ad8ece34c6d6fa60bf3&"
+                        class="card-img-top" alt="Caitlyn">
+                    <h5 class="card-title">Caitlyn Wang</h5>
+                    <p class="card-text">20+ years of experience as a hair stylist</p>
                 </div>
             </div>
         </div>
     </div>
     </div>
 
-
+    <div class="container pt-5 pb-5">
+        <h2 id="schedule-appointment">Schedule an Appointment</h2>
+        <form class="pt-3">
+            <div class="form-group">
+                <label>Type of Service</label>
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    Short Hair - $8
+                    Medium Hair - $16
+                    Long Hair - $100
+                    Highlights - $50
+                    Full Hair Dye - $200
+                    Lineups - $5
+                    Trim - $10
+                    Shave - $15
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Date & Time</label>
+                <input type="datetime-local" class="form-control" placeholder="">
+            </div>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" pattern="[a-zA-Z ]+" placeholder="Herm Cannon">
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" class="form-control" placeholder="hc@youremail.com">
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" class="form-control" pattern="[0-9]{10}" placeholder="6136136613">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 
 
 </body>
