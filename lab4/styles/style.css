@@ -4,5 +4,6 @@
 
 /* Bootstrap default font-family is Helvetica Neue */
 * {
-  font-family: 'Inter', 'proxima-nova', 'Times New Roman', Times, serif;
+  font-family: 'Inter', 'proxima-nova', 'Verdana', 'Times New Roman', Times,
+    serif;
 }
