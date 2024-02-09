@@ -16,6 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="icon" href="favico.png">
 
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
@@ -32,7 +33,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse d-flex justify-content-center" id="collapsibleNavbar" >
+        <div class="collapse navbar-collapse d-flex justify-content-center" id="collapsibleNavbar">
             <ul class="navbar-nav font-weight-bold">
                 <li class="nav-item px-5">
                     <a class="nav-link clr-text" href="#about">About Us</a>
@@ -53,13 +54,17 @@
 
     <div class="container pt-5 border-bottom pb-4 clr-text">
         <div class=" row">
-            <div class="col-sm-8">
+            <div class="col-sm-4">
                 <h2 id="about">About Us</h2>
                 <p>At Cannon Cuts, we believe that a great haircut is more than just a style -
                     it's an expression of individuality and confidence. With a passion for hair and a dedication to
                     excellence,
                     our team of experienced stylists is committed to providing you with a personalized salon experience
                     that exceeds your expectations.</p>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-fluid w-100"
+                    src="https://cdn.discordapp.com/attachments/912786982621577226/1205602661148401664/image.png?ex=65d8f7f9&is=65c682f9&hm=e797e47e1101c29c80c33f3434bf2e889beaee33312806f3bcee6cb804e1542c&"></img>
             </div>
             <div class="col-sm-4">
                 <h2>Location</h2>
@@ -161,7 +166,7 @@
                 <label>Phone Number</label>
                 <input type="tel" class="form-control" pattern="[0-9]{10}" placeholder="6136136613">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" onsubmit="">Submit</button>
         </form>
     </div>
 

@@ -20,11 +20,11 @@
 
 .clr-secondary {
   background-color: #ffc9bd;
+  /* background-color: lightpink; */
 }
 
 .clr-text {
   color: rgb(41, 41, 67);
-  /* color: purple; */
 }
 
 .clr-bg-text {
