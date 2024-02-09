@@ -10,6 +10,23 @@
 
 .card-img-top {
   width: 100%;
-  height: 15vw;
+  height: 13vw;
   object-fit: cover;
+}
+
+.clr-primary {
+  background-color: #fcfbf9;
+}
+
+.clr-secondary {
+  background-color: #ffc9bd;
+}
+
+.clr-text {
+  color: rgb(41, 41, 67);
+  /* color: purple; */
+}
+
+.clr-bg-text {
+  color: #fcfbf9;
 }
