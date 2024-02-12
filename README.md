@@ -11,3 +11,5 @@
 [Lab 3](https://seg3125-a.github.io/Group-12/lab3/)
 
 [Lab 4](https://seg3125-a.github.io/Group-12/lab4/)
+
+[Lab 5](https://seg3125-a.github.io/Group-12/lab5/)
