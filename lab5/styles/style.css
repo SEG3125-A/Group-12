@@ -1,0 +1,15 @@
+/* Style sheet
+   color picker www.w3schools.com/colors/colors_picker.asp
+*/
+
+/* Bootstrap default font-family is Helvetica Neue */
+* {
+  font-family: 'Inter', 'proxima-nova', 'Verdana', 'Times New Roman', Times,
+    serif;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
