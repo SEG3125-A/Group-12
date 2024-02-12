@@ -16,113 +16,117 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="icon" href="favico.png">
 
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 
 
-<body>
-    <div class="jumbotron text-center" style="margin-bottom:0">
+<body class="clr-primary">
+    <div class="jumbotron text-center clr-primary clr-text" style="margin-bottom:0">
         <p class="display-1">Cannon Cuts</p>
         <p>Unlock Your Hair's Potential.</p>
     </div>
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse d-flex justify-content-center" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About Us</a>
+    <nav class="navbar navbar-expand-lg clr-secondary border">
+        <div class="navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav font-weight-bold">
+                <li class="nav-item px-5">
+                    <a class="nav-link clr-text" href="#about">About Us</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#our-services">Our Services</a>
+                <li class="nav-item px-5">
+                    <a class="nav-link clr-text" href="#our-services">Our Services</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#our-team">Our Team</a>
+                <li class="nav-item px-5">
+                    <a class="nav-link clr-text" href="#our-team">Our Team</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#schedule-appointment">Schedule an Appointment</a>
+                <li class="nav-item px-5">
+                    <a class="nav-link clr-text" href="#schedule-appointment">Schedule an Appointment</a>
                 </li>
             </ul>
 
         </div>
     </nav>
 
-    <div class="container pt-5">
+    <div class="container pt-5 border-bottom pb-4 clr-text">
         <div class=" row">
-        <div class="col-sm-8">
-            <h2 id="about">About Us</h2>
-            <p>At Cannon Cuts, we believe that a great haircut is more than just a style -
-                it's an expression of individuality and confidence. With a passion for hair and a dedication to excellence, 
-                our team of experienced stylists is committed to providing you with a personalized salon experience that exceeds your expectations.</p>
-        </div>
-        <div class="col-sm-4">
-            <h2>Location</h2>
-            <p>2 Eireann Quay, Toronto, ON M5V 1A1</p>
+            <div class="col-sm-4">
+                <h2 id="about">About Us</h2>
+                <p>At Cannon Cuts, we believe that a great haircut is more than just a style -
+                    it's an expression of individuality and confidence. With a passion for hair and a dedication to
+                    excellence,
+                    our team of experienced stylists is committed to providing you with a personalized salon experience
+                    that exceeds your expectations.</p>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-fluid w-100"
+                    src="https://cdn.discordapp.com/attachments/912786982621577226/1205602661148401664/image.png?ex=65d8f7f9&is=65c682f9&hm=e797e47e1101c29c80c33f3434bf2e889beaee33312806f3bcee6cb804e1542c&"></img>
+            </div>
+            <div class="col-sm-4">
+                <h2>Location</h2>
+                <p>2 Eireann Quay, Toronto, ON M5V 1A1</p>
+            </div>
         </div>
     </div>
 
-    <div class="container pt-5">
+    <div class="container pt-5 border-bottom pb-5 clr-text">
         <h2 id="our-services">Our Services</h2>
         <h5 id=>Haircuts</h5>
-        <div class="row d-flex justify-content-between ">
+        <div class="row d-flex justify-content-between">
 
-            <div class="card col-sm-3 m-2" style="width: 18rem;">
+            <div class="card col-sm-3 p-2 m-2 clr-secondary rounded-lg border">
                 <div class="card-body">
-                    <img class="card-img-top"
+                    <img class="card-img-top mb-3"
                         src="https://media.discordapp.net/attachments/912786982621577226/1205269640482131989/1300889.jpeg?ex=65d7c1d3&is=65c54cd3&hm=c57907aabcae8b7f37e579db1363d96a001eecf4b07412ca387fb355e9798016&=&format=webp&width=362&height=496"
                         alt="Short Hair Cut"></img>
-                    <h5 class="card-title">Short Hair - $30</h5>
+                    <h5 class="card-title clr-bg-text">Short Hair - $30</h5>
                 </div>
             </div>
-            <div class="card col-sm-3 m-2" style="width: 18rem;">
+            <div class="card col-sm-3 p-2 m-2 clr-secondary rounded-lg border">
                 <div class="card-body">
                     <img src="https://cdn.discordapp.com/attachments/912786982621577226/1205270349357523015/53d559584d8c6_-_emma-stone-new-hair-2-de.jpg?ex=65d7c27c&is=65c54d7c&hm=b8c6f7c9374f738ba193092bd6c05d6883cceee9113dfed6d6113b8addeff4e9&"
-                        class="card-img-top" alt="Medium Hair Cut">
-                    <h5 class="card-title">Medium Hair - $50</h5>
+                        class="card-img-top mb-3 rounded-lg" alt="Medium Hair Cut">
+                    <h5 class="card-title clr-bg-text">Medium Hair - $50</h5>
                 </div>
             </div>
-            <div class="card col-sm-3 m-2" style="width: 18rem;">
+            <div class="card col-sm-3 p-2 m-2 clr-secondary rounded-lg border">
                 <div class="card-body">
                     <img src="https://cdn.discordapp.com/attachments/912786982621577226/1205268648378499173/image.png?ex=65d7c0e6&is=65c54be6&hm=0aec8ebcfc7ef27dba1c646bda6f7c1ac8d210ea18c4e5c12465b72b31bf2b56&"
-                        class="card-img-top" alt="Long Hair Cut">
-                    <h5 class="card-title">Long Hair - $70</h5>
+                        class="card-img-top mb-3 rounded-lg" alt="Long Hair Cut">
+                    <h5 class="card-title clr-bg-text">Long Hair - $70</h5>
                 </div>
             </div>
         </div>
     </div>
-    </div>
 
     </div>
 
-    <div class="container pt-5">
+    <div class="container pt-5 border-bottom pb-5 clr-text">
         <h2 id="our-team">Our Team</h2>
-        <div class="row d-flex justify-content-between ">
+        <div class="row d-flex justify-content-between">
 
-            <div class="card col-sm-3 m-2" style="width: 18rem;">
+            <div class="card col-sm-3 m-2">
                 <div class="card-body">
-                    <img class="card-img-top"
+                    <img class="card-img-top mb-3"
                         src="https://cdn.discordapp.com/attachments/163767906411347968/1205255512547922060/image.png?ex=65d7b4aa&is=65c53faa&hm=859ffe50971508c9b74805c433937fe555362e6037f2197ef8144963c05078e3&"
                         alt="Surge"></img>
                     <h5 class="card-title">Surge R.</h5>
                     <p class="card-text">10+ years of experience as a barber specializing in short hair</p>
                 </div>
             </div>
-            <div class="card col-sm-3 m-2" style="width: 18rem;">
+            <div class="card col-sm-3 m-2">
                 <div class="card-body">
                     <img src="https://cdn.discordapp.com/attachments/163767906411347968/1205246907585396769/image.png?ex=65d7aca7&is=65c537a7&hm=3796e8976ec28c128c664830d25bcba7ef01ccdf1d82235a9b7e0f36750c928d&"
-                        class="card-img-top" alt="Alphonse-Zander">
+                        class="card-img-top mb-3" alt="Alphonse-Zander">
                     <h5 class="card-title">Alphonse-Zander A.</h5>
                     <p class="card-text">2+ years of experience in customer service</p>
                 </div>
             </div>
-            <div class="card col-sm-3 m-2" style="width: 18rem;">
+            <div class="card col-sm-3 m-2">
                 <div class="card-body">
                     <img src="https://cdn.discordapp.com/attachments/163767906411347968/1205248680341409802/image.png?ex=65d7ae4d&is=65c5394d&hm=1309dce017dddc31c4b88cc22882b758992fcdeef9e18ad8ece34c6d6fa60bf3&"
-                        class="card-img-top" alt="Caitlyn">
+                        class="card-img-top mb-3" alt="Caitlyn">
                     <h5 class="card-title">Caitlyn Wang</h5>
                     <p class="card-text">20+ years of experience as a hair stylist</p>
                 </div>
@@ -131,7 +135,7 @@
     </div>
     </div>
 
-    <div class="container pt-5 pb-5">
+    <div class="container pt-5 pb-5 clr-text">
         <h2 id="schedule-appointment">Schedule an Appointment</h2>
         <form class="pt-3">
             <div class="form-group">
@@ -159,7 +163,7 @@
                 <label>Phone Number</label>
                 <input type="tel" class="form-control" pattern="[0-9]{10}" placeholder="6136136613">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" onsubmit="">Submit</button>
         </form>
     </div>
 
