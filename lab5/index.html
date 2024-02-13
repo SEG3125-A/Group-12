@@ -476,7 +476,7 @@
         </div>
         <div class="col-md-4 mb-3">
           <label for="state">Province/State</label>
-          <input type="text" class="form-control" id="zip" placeholder="Ontario" required>
+          <input type="text" class="form-control" id="zip" placeholder="Ontario" pattern="[a-zA-Z ]+" required>
           <div class="invalid-feedback">
             Please input province using letters only.
           </div>
@@ -495,18 +495,18 @@
 
       <div class="d-block my-3">
         <div class="custom-control custom-radio">
-          <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+          <input id="credit" type="radio" class="custom-control-input" checked="" required="">
           <label class="custom-control-label" for="credit">Credit card</label>
         </div>
         <div class="custom-control custom-radio">
-          <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+          <input id="debit" type="radio" class="custom-control-input" required="">
           <label class="custom-control-label" for="debit">Debit card</label>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6 mb-3">
           <label for="cc-name">Name on Card</label>
-          <input type="text" class="form-control" id="cc-name" placeholder="Herm Cannon" required>
+          <input type="text" class="form-control" id="cc-name" placeholder="Herm Cannon" pattern="[a-zA-Z ]+" required>
           <small class="text-muted">Full name as displayed on card</small>
           <div class="invalid-feedback">
             Name on card is required
@@ -524,7 +524,7 @@
       <div class="row">
         <div class="col-md-3 mb-3">
           <label for="cc-expiration">Expiration(MM/YY)</label>
-          <input type="text" class="form-control" id="cc-expiration" placeholder="01/24" pattern="[0-9]{1,2}/[0-9]{1,2}"
+          <input type="text" class="form-control" id="cc-expiration" placeholder="01/24" pattern="[0-9]{1,2}/[0-9]{1,2}" maxlength="5"
             required>
           <div class="invalid-feedback">
             Expiration date required
@@ -532,7 +532,7 @@
         </div>
         <div class="col-md-3 mb-3">
           <label for="cc-cvv">CVV</label>
-          <input type="text" class="form-control" id="cc-cvv" placeholder="123" required pattern="[0-9]{3}">
+          <input type="text" class="form-control" id="cc-cvv" placeholder="123" required pattern="[0-9]{3}" maxlength="3">
           <div class="invalid-feedback">
             Security code required
           </div>
