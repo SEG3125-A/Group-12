@@ -14,6 +14,7 @@
   <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
   <script src="main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -66,7 +67,7 @@
       </div>
       <div class="col-sm-4">
         <h2>Location</h2>
-        <p>2 Eireann Quay, Toronto, ON M5V 1A1</p>
+        <p>2 Eireann Quay, Toronto, ON M5V1A1</p>
       </div>
     </div>
   </div>
@@ -140,83 +141,72 @@
   </div>
   </div>
 
-  <div class="container pt-5 pb-5 clr-text">
+  <div class="container pt-5 pb-5 clr-text" id="infoForm">
     <h2 id="schedule-appointment">Schedule an Appointment</h2>
-    <form id="infoForm" class="pt-3">
+    <form class="pt-3 needs-validation" novalidate onsubmit="return false">
       <div class="form-group">
         <label>Type of Service</label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-          <option selected>Choose...</option>
+        <select class="custom-select mr-sm-2" id="validationCustom01" required>
+          <option selected disabled value="">Choose...</option>
           <option value="3">Short Hair</option>
           <option value="3">Medium Hair</option>
           <option value="3">Long Hair</option>
         </select>
+        <div class="invalid-feedback">
+          Please select a service.
+        </div>
       </div>
       <div class="form-group">
         <label>Professional</label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-          <option selected>Select the professional</option>
+        <select class="custom-select mr-sm-2" id="validationCustom02" required>
+          <option selected disabled value="">Select the professional</option>
           <option value="3">Alphonse-Zander A.</option>
           <option value="3">Surge R.</option>
           <option value="3">Caitlyn Wang</option>
         </select>
+        <div class="invalid-feedback">
+          Please select a professional.
+        </div>
       </div>
       <div class="form-group">
         <label>Date & Time</label>
-        <input type="datetime-local" class="form-control" placeholder="">
+        <input type="datetime-local" class="form-control" placeholder="" id="validationCustom03" required>
+      </div>
+      <div class="invalid-feedback">
+        Please provide a valid date and time.
       </div>
       <div class="form-group">
         <label>Name</label>
-        <input type="text" class="form-control" pattern="[a-zA-Z ]+" placeholder="Herm Cannon"
-          oninvalid="this.setCustomValidity('Invalid name. Please use letters only.')"
-          onchange="try{setCustomValidity('')}catch(e){}">
+        <input type="text" class="form-control" pattern="[a-zA-Z ]+" placeholder="Herm Cannon" id="validationCustom04"
+          required>
+        <div class="invalid-feedback">
+          Invalid name. Please use letters only.
+        </div>
       </div>
       <div class="form-group">
         <label>Email Address</label>
-        <input type="email" class="form-control" placeholder="hc@youremail.com"
-          oninvalid="this.setCustomValidity('Invalid email. Please use email format email@email.com.')"
-          onchange="try{setCustomValidity('')}catch(e){}">
+        <input type="email" class="form-control" placeholder="hc@youremail.com" id="validationCustom05" required>
+        <div class="invalid-feedback">
+          Invalid email. Please use email format email@youremail.com.
+        </div>
       </div>
       <div class="form-group">
         <label>Phone Number</label>
-        <input type="tel" class="form-control" pattern="[0-9]{10}" placeholder="6136136613"
-          oninvalid="this.setCustomValidity('Invalid phone number. Please use numbers only that are not separated.')"
-          onchange="try{setCustomValidity('')}catch(e){}">
+        <input type="tel" class="form-control" pattern="[0-9]{10}" placeholder="6136136613" id="validationCustom06"
+          required>
+        <div class="invalid-feedback">
+          Invalid phone number. Please use numbers only.
+        </div>
       </div>
-      <button type="button" class="btn btn-primary" onclick="showPayment(event)">Continue to Payment</button>
+      <button type="submit" class="btn btn-primary">Continue to Payment</button>
     </form>
   </div>
   <div class="container pt-3 pb-5 clr-text col-md-8 order-md-1 d-none" id="payment">
     <h4 class="mb-3">Billing Address & Payment</h4>
-    <form class="needs-validation" novalidate="">
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <label for="firstName">First name</label>
-          <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-          <div class="invalid-feedback">
-            Valid first name is required.
-          </div>
-        </div>
-        <div class="col-md-6 mb-3">
-          <label for="lastName">Last name</label>
-          <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-          <div class="invalid-feedback">
-            Valid last name is required.
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-3">
-        <label for="email">Email <span class="text-muted">(Optional)</span></label>
-        <input type="email" class="form-control" id="email" placeholder="you@example.com">
-        <div class="invalid-feedback">
-          Please enter a valid email address for shipping updates.
-        </div>
-      </div>
-
+    <form class="needs-validation" novalidate>
       <div class="mb-3">
         <label for="address">Address</label>
-        <input type="text" class="form-control" id="address" placeholder="2 Eireann Quay" required="">
+        <input type="text" class="form-control" id="address" placeholder="2 Eireann Quay" required>
         <div class="invalid-feedback">
           Please enter your billing address.
         </div>
@@ -231,7 +221,7 @@
         <div class="col-md-5 mb-3">
           <label for="country">Country</label>
           <!-- obtained from: https://gist.github.com/danrovito/977bcb97c9c2dfd3398a -->
-          <select class="custom-select d-block w-100" id="country" required="">
+          <select class="custom-select d-block w-100" id="country" required>
             <option>Canada</option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Åland Islands">Åland Islands</option>
@@ -486,14 +476,15 @@
         </div>
         <div class="col-md-4 mb-3">
           <label for="state">Province/State</label>
-          <input type="text" class="form-control" id="zip" placeholder="Ontario" required="">
+          <input type="text" class="form-control" id="zip" placeholder="Ontario" required>
           <div class="invalid-feedback">
             Please input province using letters only.
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="zip">Postal/Zip Code</label>
-          <input type="text" class="form-control" id="zip" placeholder="" required="">
+          <input type="text" class="form-control" id="zip" placeholder="M5V1A1" required
+            pattern="([a-zA-Z][0-9][a-zA-Z][0-9][a-zA-Z][0-9]|[0-9]{5})">
           <div class="invalid-feedback">
             Zip code required.
           </div>
@@ -515,7 +506,7 @@
       <div class="row">
         <div class="col-md-6 mb-3">
           <label for="cc-name">Name on Card</label>
-          <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+          <input type="text" class="form-control" id="cc-name" placeholder="Herm Cannon" required>
           <small class="text-muted">Full name as displayed on card</small>
           <div class="invalid-feedback">
             Name on card is required
@@ -523,8 +514,9 @@
         </div>
         <div class="col-md-6 mb-3">
           <label for="cc-number">Credit/Debit Card Number</label>
-          <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-          <div class="invalid-feedback">
+          <input type="tel" inputmode="numeric" class="form-control" id="cc-number" placeholder="0000000000000000"
+            required pattern="[0-9\s]{13,19}">
+          <div class=" invalid-feedback">
             Credit card number is required
           </div>
         </div>
@@ -532,21 +524,23 @@
       <div class="row">
         <div class="col-md-3 mb-3">
           <label for="cc-expiration">Expiration(MM/YY)</label>
-          <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+          <input type="text" class="form-control" id="cc-expiration" placeholder="01/24" pattern="[0-9]{1,2}/[0-9]{1,2}"
+            required>
           <div class="invalid-feedback">
             Expiration date required
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="cc-cvv">CVV</label>
-          <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+          <input type="text" class="form-control" id="cc-cvv" placeholder="123" required pattern="[0-9]{3}">
           <div class="invalid-feedback">
             Security code required
           </div>
         </div>
       </div>
       <hr class="mb-4">
-      <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+      <button class="btn btn-secondary" type="button" onclick="backToScheduling()">Back to Scheduling</button>
+      <button class="btn btn-primary" type="submit">Submit Booking</button>
     </form>
   </div>
 
