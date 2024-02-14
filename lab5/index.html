@@ -19,10 +19,9 @@
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
   <script defer src="main.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-  
-  
+
+
 
   <link rel="icon" href="images/favico.png">
 
@@ -85,7 +84,7 @@
       </div>
       <div class="col-sm-4">
         <h2><img class="img-icon mr-3" src="images/location.png" alt="Scissors Icon" style="width: 15%;">Location</h2>
-        <p>2 Eireann Quay, Toronto, ON M5V1A1</p>
+        <p>2 Eireann Quay, Toronto, ON M5V 1A1</p>
       </div>
     </div>
   </div>
@@ -185,9 +184,9 @@
         <label>Professional</label>
         <select class="custom-select mr-sm-2" id="validationCustom02" required>
           <option selected disabled value="">Select the professional</option>
-          <option value="Alphonse-Zander A.">Alphonse-Zander A.</option>
-          <option value="Surge R.">Surge R.</option>
-          <option value="Caitlyn Wang">Caitlyn Wang</option>
+          <option value="Alphonse-Zander A.">Alphonse-Zander A. (Monday-Thursday)</option>
+          <option value="Surge R.">Surge R. (Tuesday-Friday)</option>
+          <option value="Caitlyn Wang">Caitlyn Wang (Monday-Friday)</option>
         </select>
         <div class="invalid-feedback">
           Please select a professional.
@@ -195,8 +194,9 @@
       </div>
       <div class="form-group">
         <label>Date & Time</label>
-        <input type="text" id="datepicker" class="form-control" required>
-        <input type="time" id="timepicker" class="form-control" min="9:00" max="17:00" required>
+        <input type="text" id="datepicker" class="form-control" required disabled>
+        <input type="time" id="timepicker" class="form-control" min="09:00" max="17:00" required>
+        <h6 class="text-muted">Our working hours are between 9:00am and 5:00pm</h6>
 
       </div>
       <div class="invalid-feedback">
@@ -506,15 +506,15 @@
         </div>
         <div class="col-md-4 mb-3">
           <label for="state">Province/State</label>
-          <input type="text" class="form-control" id="zip" placeholder="Ontario" pattern="[a-zA-Z ]+" required>
+          <input type="text" class="form-control" placeholder="Ontario" pattern="[a-zA-Z ]+" required>
           <div class="invalid-feedback">
             Please input province using letters only.
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="zip">Postal/Zip Code</label>
-          <input type="text" class="form-control" id="zip" placeholder="M5V1A1" required
-            pattern="([a-zA-Z][0-9][a-zA-Z][0-9][a-zA-Z][0-9]|[0-9]{5})">
+          <input type="text" class="form-control" id="zip" placeholder="M5V 1A1" required
+            pattern="([a-zA-Z][0-9][a-zA-Z][ ]{0,1}[0-9][a-zA-Z][0-9]|[0-9]{5})">
           <div class="invalid-feedback">
             Zip code required.
           </div>
@@ -523,7 +523,7 @@
 
       <h4 class="mb-3">Payment</h4>
 
-   
+
       <div class="row">
         <div class="col-md-6 mb-3">
           <label for="cc-name">Name on Card</label>
