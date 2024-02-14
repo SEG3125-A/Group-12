@@ -24,6 +24,18 @@
   <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 
+<!-- from https://getbootstrap.com/docs/4.3/components/toasts/ -->
+<div class="toast fixed-top m-2 z-1 left-50" id="paymentToast" role="alert" aria-live="assertive" aria-atomic="true"
+  data-delay="15000">
+  <div class="toast-header">
+    <strong class="mr-auto">Success!</strong>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body" id="toastMessage">
+  </div>
+</div>
 
 <body class="clr-primary">
   <div class="jumbotron text-center clr-primary clr-text" style="margin-bottom:0">
@@ -148,9 +160,9 @@
         <label>Type of Service</label>
         <select class="custom-select mr-sm-2" id="validationCustom01" required>
           <option selected disabled value="">Choose...</option>
-          <option value="3">Short Hair</option>
-          <option value="3">Medium Hair</option>
-          <option value="3">Long Hair</option>
+          <option value="Short Hair">Short Hair</option>
+          <option value="Medium Hair">Medium Hair</option>
+          <option value="Long Hair">Long Hair</option>
         </select>
         <div class="invalid-feedback">
           Please select a service.
@@ -160,9 +172,9 @@
         <label>Professional</label>
         <select class="custom-select mr-sm-2" id="validationCustom02" required>
           <option selected disabled value="">Select the professional</option>
-          <option value="3">Alphonse-Zander A.</option>
-          <option value="3">Surge R.</option>
-          <option value="3">Caitlyn Wang</option>
+          <option value="Alphonse-Zander A.">Alphonse-Zander A.</option>
+          <option value="Surge R.">Surge R.</option>
+          <option value="Caitlyn Wang">Caitlyn Wang</option>
         </select>
         <div class="invalid-feedback">
           Please select a professional.
@@ -204,7 +216,7 @@
   </div>
   <div class="container pt-3 pb-5 clr-text col-md-8 order-md-1 d-none" id="payment">
     <h4 class="mb-3">Billing Address & Payment</h4>
-    <form class="needs-validation" novalidate>
+    <form id="paymentForm" class="needs-validation" novalidate>
       <div class="mb-3">
         <label for="address">Address</label>
         <input type="text" class="form-control" id="address" placeholder="2 Eireann Quay" required>
@@ -525,15 +537,16 @@
       <div class="row">
         <div class="col-md-3 mb-3">
           <label for="cc-expiration">Expiration(MM/YY)</label>
-          <input type="text" class="form-control" id="cc-expiration" placeholder="01/24" pattern="[0-9]{1,2}/[0-9]{1,2}" maxlength="5"
-            required>
+          <input type="text" class="form-control" id="cc-expiration" placeholder="01/24" pattern="[0-9]{1,2}/[0-9]{1,2}"
+            maxlength="5" required>
           <div class="invalid-feedback">
             Expiration date required
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="cc-cvv">CVV</label>
-          <input type="text" class="form-control" id="cc-cvv" placeholder="123" required pattern="[0-9]{3}" maxlength="3">
+          <input type="text" class="form-control" id="cc-cvv" placeholder="123" required pattern="[0-9]{3}"
+            maxlength="3">
           <div class="invalid-feedback">
             Security code required
           </div>
@@ -544,7 +557,6 @@
       <button class="btn btn-primary" type="submit">Submit Booking</button>
     </form>
   </div>
-
 </body>
 
 </html>
