@@ -22,8 +22,10 @@ window.addEventListener('load', function () {
 
 // datetime picker settings
 var now = new Date();
+now.setMinutes(now.getMinutes - now.getTimezoneOffset())
 var nowDate = now.toISOString().split("T")[0] + "T00:00";
 $("#validationCustom03")[0].setAttribute("min", nowDate);
+
 now.setFullYear(now.getFullYear() + 1)
 var laterDate = now.toISOString().split("T")[0] + "T00:00";
 $("#validationCustom03")[0].setAttribute("max", laterDate);
