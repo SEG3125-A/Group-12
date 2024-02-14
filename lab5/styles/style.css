@@ -14,6 +14,13 @@
   object-fit: cover;
 }
 
+.img-icon {
+  max-width: 4rem;
+  max-height: 4rem;
+  height: auto;
+  width: auto;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .card-img-top {
     height: 75vw;
@@ -25,7 +32,7 @@
 }
 
 .clr-secondary {
-  background-color: #ffc9bd !important; 
+  background-color: #ffc9bd !important;
   /* background-color: lightpink; */
 }
 
@@ -34,7 +41,7 @@
 }
 
 .clr-bg-text {
-  color: #fcfbf9 !important; 
+  color: #fcfbf9 !important;
 }
 
 /*! CSS Used from: https://getbootstrap.com/docs/4.2/dist/css/bootstrap.min.css */

@@ -1,4 +1,4 @@
-// from https://getbootstrap.com/docs/4.5/components/forms/
+// some code from https://getbootstrap.com/docs/4.5/components/forms/
 
 'use strict';
 window.addEventListener('load', function () {
@@ -26,6 +26,9 @@ window.addEventListener('load', function () {
         }, false);
     });
 }, false);
+
+$('img').on('dragstart', function(event) { event.preventDefault(); });
+
 
 // datetime picker settings
 var now = new Date();
