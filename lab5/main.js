@@ -3,7 +3,7 @@
 'use strict';
 window.addEventListener('load', function () {
     //for testing
-    $("#payment")[0].classList.remove("d-none")
+    // $("#payment")[0].classList.remove("d-none")
     // $("#paymentToast").toast('show')
 
 

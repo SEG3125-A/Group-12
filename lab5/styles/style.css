@@ -28,7 +28,7 @@
 }
 
 .clr-primary {
-  background-color: #fcfbf9;
+  background-color: #fcfbf9 !important;
 }
 
 .clr-secondary {
@@ -37,12 +37,13 @@
 }
 
 .clr-text {
-  color: rgb(41, 41, 67);
+  color: rgb(41, 41, 67) !important;
 }
 
 .clr-bg-text {
   color: #fcfbf9 !important;
 }
+
 
 /*! CSS Used from: https://getbootstrap.com/docs/4.2/dist/css/bootstrap.min.css */
 *,
