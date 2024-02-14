@@ -18,7 +18,7 @@ window.addEventListener('load', function () {
                 $("#payment")[0].classList.remove("d-none")
                 $("#infoForm")[0].classList.add("d-none")
                 if (form.id === 'paymentForm') {
-                    $("#toastMessage").text(`Hello ${$("#validationCustom04").val()}! Your booking for a ${$("#validationCustom01").val()}cut with ${$("#validationCustom02").val()} has been successfully booked for ${new Date($("#validationCustom03").val()).toLocaleTimeString()} on ${new Date($("#validationCustom03").val()).toLocaleDateString()}`)
+                    $("#toastMessage").text(`Hello ${$("#validationCustom04").val()}! Your booking for a ${$("#validationCustom01").val()}cut with ${$("#validationCustom02").val()} has been successfully booked for ${new Date($("#timepicker").val()).toLocaleTimeString()} on ${new Date($("#datepicker").val()).toLocaleDateString()}`)
                     $("#paymentToast").toast('show')
                 }
             }
@@ -30,15 +30,6 @@ window.addEventListener('load', function () {
 $('img').on('dragstart', function(event) { event.preventDefault(); });
 
 
-// datetime picker settings
-var now = new Date();
-now.setMinutes(now.getMinutes() - now.getTimezoneOffset())
-var nowDate = now.toISOString().split("T")[0] + "T00:00";
-$("#validationCustom03")[0].setAttribute("min", nowDate);
-
-now.setFullYear(now.getFullYear() + 1)
-var laterDate = now.toISOString().split("T")[0] + "T00:00";
-$("#validationCustom03")[0].setAttribute("max", laterDate);
 
 function backToScheduling() {
     $("#payment")[0].classList.add("d-none")
@@ -53,3 +44,21 @@ function onSubmitPayment(e) {
 }
 
 
+$(document).on('change', '#validationCustom02', function () {
+
+    $('#datepicker').datepicker({
+      beforeShowDay: function (date) {
+
+        if ($('#validationCustom02').val() === "Surge R.") {
+          return [date.getDay() == 0 || date.getDay() == 6 || date.getDay() == 1 ? false : true];
+
+        }
+        else if ($('#validationCustom02').val() === "Alphonse-Zander A.") {
+          return [date.getDay() == 5 || date.getDay() == 0 || date.getDay() == 6 ? false : true];
+        }
+
+        return [date.getDay() == 0 || date.getDay() == 6 ? false : true];
+      }, minDate: 0, maxDate: 14
+    });
+  });
+  
