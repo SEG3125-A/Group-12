@@ -3,78 +3,129 @@
 
 <head>
 	<meta charset="utf-8">
-	<link href="styles/style.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Questionnaire</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
-<body>
-	<h1>Apple Survey</h1>
-	<form id="myform" action="index.php">
-		<br>
-		<br>
-		<h2>What are your thoughts on the new iPhone 15 on the <a href="https://www.apple.com/ca/">Apple</a> site?
-		</h2>
-		<br>
-		<br>
-		<a href="https://www.apple.com/ca/"><img src="Images/Apple Image.png" alt="https://www.apple.com/ca/"></a>
-		<br>
-		<br>
-		<div class="question">
-			<h2> What is the model of your current phone?</h2>
-			<p>Model: <input type="text" name="model"></p>
-			<br>
-			<br>
-
+<body class="d-flex flex-column justify-content-center bg-secondary">
+	<h1 class="text-primary">Website Survey</h1>
+	<h2 class="text-light">What are your thoughts on the new iPhone 15 on the <a class="primary-link"
+			href="https://www.apple.com/ca/">Apple</a> website?
+	</h2>
+	<div class="container-sm">
+		<a href="https://www.apple.com/ca/">
+			<img class="img-fluid" src="Images/Apple Image.png" alt="https://www.apple.com/ca/"></a>
+	</div>
+	<form class="pt-5 mx-5" id="myform" action="index.php">
+		<div class="form-group d-flex flex-column text-light p-5 h4" style="margin-left: 50%;
+		transform: translatex(-50%);">
+			<label for="fullname">What is your name?</label>
+			<input type="text" class="form-control" id="fullname" placeholder="Herm Cannon">
 		</div>
 
-		<div class="question">
-			<h2>Which Apple products do you own?</h2>
-			<h3>I own:</h3><br>
-			<div class="text">iPhone <input type="checkbox" name="Product" value="iPhone"><br></div>
-			<div class="text">iPad <input type="checkbox" name="Product" value="iPad"><br></div>
-			<div class="text">MacBook <input type="checkbox" name="Product" value="MacBook"><br></div>
-			<div class="text">Airpods <input type="checkbox" name="Product" value="Airpods"><br></div>
+		<div class="form-group d-flex flex-column text-light p-5 h4" style="margin-left: 50%;
+		transform: translatex(-50%);">
+			<label for="model">What is the model of your current phone?</label>
+			<input type="text" class="form-control" name="model">
+		</div>
 
-			<br>
-			<br>
+		<div class="form-group d-flex flex-column text-light p-5 h4" style="margin-left: 50%;
+		transform: translatex(-50%);">
+			<label>Which of these Apple products do you own?</label>
 
-			<h2>How much money would you spend on a new Apple product?</h2>
-			<select id="budget">
-				<option value="0 - 299" selected="selected">$0 - $299</option>
-				<option value="300 - 699">$300 - $699</option>
-				<option value="700+">$700+</option>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="iPhone" id="iPhone">
+				<label class="form-check-label" for="iPhone">
+					iPhone
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="iPad" id="iPad">
+				<label class="form-check-label" for="iPad">
+					iPad
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="MacBook" id="MacBook">
+				<label class="form-check-label" for="MacBook">
+					MacBook
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="Airpods" id="Airpods">
+				<label class="form-check-label" for="Airpods">
+					Airpods
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="Apple Vision Pro" id="Apple Vision Pro">
+				<label class="form-check-label" for="Apple Vision Pro">
+					Apple Vision Pro
+				</label>
+			</div>
+		</div>
+
+		<div class="form-group d-flex flex-column text-light p-5 h4" style="margin-left: 50%;
+		transform: translatex(-50%);">
+			<label for="budget">How much money would you spend on a new Apple product?</label>
+			<select class="form-control" id="budget">
+				<option value="$0 - $299">$0 - $299</option>
+				<option value="$300 - $699">$300 - $699</option>
+				<option value="$700 - $999">$700 - $999</option>
+				<option value="$1000+">$1000+</option>
 			</select>
-
-			<br>
-			<br>
-
-			<h2>Which type of smartphone OS do you prefer?</h2>
-			<div class="text">iOS <input type="radio" name="type" value="iOS"></div>
-			<div class="text">Android <input type="radio" name="type" value="Android"></div> <br>
-
 		</div>
 
-		<br>
-		<br>
+		<div class="form-group d-flex flex-column text-light p-5 h4" style="margin-left: 50%;
+		transform: translatex(-50%);">
+			<h4>Which type of smartphone OS do you prefer?</h4>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="OS" id="iOS" value="iOS" checked>
+				<label class="form-check-label" for="iOS">
+					iOS
+				</label>
+			</div>
 
-		<div class="question">
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="OS" id="Android" value="Android">
+				<label class="form-check-label" for="Android">
+					Android
+				</label>
+			</div>
+			<div class="form-check disabled">
+				<input class="form-check-input" type="radio" name="OS" id="other" value="other">
+				<label class="form-check-label" for="other">
+					Other
+				</label>
+			</div>
+		</div>
+
+
+		<div class="form-group d-flex flex-column text-light p-5 h4" style="margin-left: 50%;
+		transform: translatex(-50%);">
 			<div class="text">
 				Comments:<br>
 			</div>
 			<textarea rows="5" cols="30"></textarea>
 		</div>
 
-		<br>
-		<br>
+		<div class="form-group d-flex flex-column text-light p-5 h4" style="margin-left: 50%;
+		transform: translatex(-50%);">
+			<button id="submitButton" type="button" class="bg-primary" onclick="">
+				Submit Questionnaire
+			</button>
+		</div>
 
-		<button id="submitButton" type="button" class="block">
-			Submit Questionnaire
-		</button>
-
-		<p id="signature">Site Created by Group 12, Arthur Wang, Kaitlyn Wong, Harman Sekhon, Sooriya Radhakrishnan
-		</p>
 
 	</form>
 </body>
+<p id="signature">Site Created by Group 12, Arthur Wang, Kaitlyn Wong, Harman Sekhon, Sooriya Radhakrishnan
+</p>
 
 </html>

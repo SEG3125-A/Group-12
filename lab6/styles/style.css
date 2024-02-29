@@ -1,4 +1,4 @@
-html, body {
+/* html, body {
   font-family: 'Arial', sans-serif;
   background-color: rgba(30, 32, 33, 1);
   color: #333;
@@ -6,6 +6,10 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0;
+} */
+
+* {
+  font-family: "Inter", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h1 {
@@ -30,12 +34,12 @@ h2 {
   color: white;
 }
 
-img {
+/* img {
   display: block;
   margin: 0 auto;
   max-width: 100%;
   height: auto;
-}
+} */
 
 p {
   color: white;
@@ -49,7 +53,7 @@ table {
 }
 
 /* Defining styling for a specific element type - each question */
-.question {
+/* .question {
   background-color: rgba(30, 32, 33, 1);
   margin: 20px;
   padding: 20px;
@@ -58,7 +62,7 @@ table {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
+} */
 
 /* Defining styling for a specific element type - large block buttons */
 .block {
