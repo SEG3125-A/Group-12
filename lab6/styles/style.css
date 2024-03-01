@@ -9,7 +9,8 @@
 } */
 
 * {
-  font-family: "Inter", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Inter", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
 }
 
 h1 {
@@ -18,16 +19,16 @@ h1 {
   text-align: center;
   margin: 0;
   padding: 20px 0;
-  color:  #555;
+  color: #555;
 }
 
 h3 {
-  color:white;
+  color: white;
 }
 
 h2 {
   font-size: 45px;
-  font-family: 'Calibri', sans-serif;
+  font-family: "Calibri", sans-serif;
   text-align: center;
   margin: 0;
   padding: 20px 0;
@@ -79,7 +80,7 @@ table {
 }
 
 .block:hover {
-  background-color: #ffc107; 
+  background-color: #ffc107;
 }
 
 /* Defining styling for a specific element with an id */
@@ -92,4 +93,9 @@ table {
 
 .text {
   color: white;
+}
+
+.required:after {
+  content: " *";
+  color: red;
 }

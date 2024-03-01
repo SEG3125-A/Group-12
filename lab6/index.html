@@ -12,6 +12,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 </head>
 
 <body class="d-flex flex-column justify-content-center bg-dark">
@@ -23,17 +24,17 @@
 		<a href="https://www.apple.com/ca/">
 			<img class="img-fluid" src="Images/Apple Image.png" alt="https://www.apple.com/ca/"></a>
 	</div>
-	<form onsubmit="console.log('hello')" class="pt-5" id="myform" action="index.php">
+	<form class="pt-5" id="myform" onsubmit="submitForm(event)">
 		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
-			<label for="fullname">What is your name?</label>
-			<input type="text" class="form-control" id="fullname" placeholder="Herm Cannon" name="name">
+			<label for="fullname" class="required">What is your name?</label>
+			<input type="text" class="form-control" id="fullname" placeholder="Herm Cannon" name="name" required>
 		</div>
 
 		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
-			<label for="model">What is the model of your current phone?</label>
-			<input type="text" class="form-control" name="model" placeholder="iPhone XR">
+			<label for="model" class="required">What is the model of your current phone?</label>
+			<input type="text" class="form-control" name="model" placeholder="iPhone XR" required>
 		</div>
 
 		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
@@ -73,10 +74,10 @@
 			</div>
 		</div>
 
-		<div class="form-group required d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
+		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
-			<label for="budget">How much money would you spend on a new Apple product?</label>
-			<select class="form-control" id="budget" name="budget">
+			<label for="budget" class="required">How much money would you spend on a new Apple product?</label>
+			<select class="form-control" id="budget" name="budget" required>
 				<option value="" disabled selected>Select an option...</option>
 				<option value="$0 - $299">$0 - $299</option>
 				<option value="$300 - $699">$300 - $699</option>
@@ -87,9 +88,9 @@
 
 		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
-			<h4>Which type of smartphone OS do you prefer?</h4>
+			<h4 class="required">Which type of smartphone OS do you prefer?</h4>
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="OS" id="iOS" value="iOS" checked>
+				<input class="form-check-input" type="radio" name="OS" id="iOS" value="iOS" required>
 				<label class="form-check-label" for="iOS">
 					iOS
 				</label>
@@ -118,7 +119,7 @@
 
 		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
-			<input id="submitButton" type="submit" class="bg-primary">
+			<input type="submit" id="submitButton" class="bg-primary">
 			Submit Questionnaire
 			</input>
 		</div>
