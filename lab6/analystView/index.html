@@ -8,7 +8,6 @@
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
-	<script src="main.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -23,60 +22,59 @@
 		<a href="https://www.apple.com/ca/">
 			<img class="img-fluid" src="Images/Apple Image.png" alt="https://www.apple.com/ca/"></a>
 	</div>
-	<form onsubmit="console.log('hello')" class="pt-5" id="myform" action="index.php">
-		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
+	<form class="pt-5 mx-5" id="myform" action="index.php">
+		<div class="form-group d-flex flex-column text-white p-5 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
 			<label for="fullname">What is your name?</label>
-			<input type="text" class="form-control" id="fullname" placeholder="Herm Cannon" name="name">
+			<input type="text" class="form-control" id="fullname" placeholder="Herm Cannon">
 		</div>
 
-		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
+		<div class="form-group d-flex flex-column text-white p-5 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
 			<label for="model">What is the model of your current phone?</label>
-			<input type="text" class="form-control" name="model" placeholder="iPhone XR">
+			<input type="text" class="form-control" name="model">
 		</div>
 
-		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
+		<div class="form-group d-flex flex-column text-white p-5 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
 			<label>Which of these Apple products do you own?</label>
 
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="iPhone" id="iPhone" name="ownedProducts">
+				<input class="form-check-input" type="checkbox" value="iPhone" id="iPhone">
 				<label class="form-check-label" for="iPhone">
 					iPhone
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="iPad" id="iPad" name="ownedProducts">
+				<input class="form-check-input" type="checkbox" value="iPad" id="iPad">
 				<label class="form-check-label" for="iPad">
 					iPad
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="MacBook" id="MacBook" name="ownedProducts">
+				<input class="form-check-input" type="checkbox" value="MacBook" id="MacBook">
 				<label class="form-check-label" for="MacBook">
 					MacBook
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="Airpods" id="Airpods" name="ownedProducts">
+				<input class="form-check-input" type="checkbox" value="Airpods" id="Airpods">
 				<label class="form-check-label" for="Airpods">
 					Airpods
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="Apple Vision Pro" id="Apple Vision Pro"
-					name="ownedProducts">
+				<input class="form-check-input" type="checkbox" value="Apple Vision Pro" id="Apple Vision Pro">
 				<label class="form-check-label" for="Apple Vision Pro">
 					Apple Vision Pro
 				</label>
 			</div>
 		</div>
 
-		<div class="form-group required d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
+		<div class="form-group required d-flex flex-column text-white p-5 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
 			<label for="budget">How much money would you spend on a new Apple product?</label>
-			<select class="form-control" id="budget" name="budget">
+			<select class="form-control" id="budget">
 				<option value="" disabled selected>Select an option...</option>
 				<option value="$0 - $299">$0 - $299</option>
 				<option value="$300 - $699">$300 - $699</option>
@@ -85,7 +83,7 @@
 			</select>
 		</div>
 
-		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
+		<div class="form-group d-flex flex-column text-white p-5 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
 			<h4>Which type of smartphone OS do you prefer?</h4>
 			<div class="form-check">
@@ -110,17 +108,19 @@
 		</div>
 
 
-		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
+		<div class="form-group d-flex flex-column text-white p-5 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
-			<label for="comments">Any Additional Comments?</label>
-			<textarea class="form-control" id="comments" rows="3" name="comments"></textarea>
+			<div class="text">
+				Comments:<br>
+			</div>
+			<textarea rows="5" cols="30"></textarea>
 		</div>
 
-		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
+		<div class="form-group d-flex flex-column text-white p-5 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
-			<input id="submitButton" type="submit" class="bg-primary">
-			Submit Questionnaire
-			</input>
+			<button id="submitButton" type="button" class="bg-primary" onclick="">
+				Submit Questionnaire
+			</button>
 		</div>
 
 

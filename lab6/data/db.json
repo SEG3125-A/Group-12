@@ -1,0 +1,28 @@
+{
+  "nameAndComment": [
+    ["Kaitlyn", "This website is awesome!"],
+    ["Sooriya", "The website needs more colour"]
+  ],
+  "currentPhones": {
+    "iPhone 13 Mini": 1,
+    "iPhone XR": 2
+  },
+  "ownedProducts": {
+    "iPhone": 5,
+    "iPad": 7,
+    "MacBook": 3,
+    "Airpods": 10,
+    "Apple Vision Pro": 1
+  },
+  "budgets": {
+    "$0 - $299": 10,
+    "$300 - $699": 5,
+    "$700 - $999": 3,
+    "$1000": 4
+  },
+  "preferredOS": {
+    "iOS": 20,
+    "Android": 1,
+    "Other": 10
+  }
+}
