@@ -7,8 +7,8 @@ const form = document.getElementById("myform")
 function submitForm(e) {
     e.preventDefault()
     const form = $("#myform")
-
-    fetch("/lab6/analyze-results", {
+    console.log(new FormData(form))
+    fetch("/lab6/server/analyze-results", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
