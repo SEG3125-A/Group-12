@@ -67,7 +67,20 @@ app.post("/submit-answers", (req, res) => {
     res.status(200).send("Submitted Form");
 })
 
-app.listen(PORT, '127.0.0.1', () =>
-    console.log(`Server is running on http://127.0.0.1:${PORT}`)
-);
+app.get("/api/get-analyst-data", (req, res) => {
+    fs.readFile('./data/db.json', { encoding: 'utf-8' }, (err, data) => {
+        let dataset = data ? JSON.parse(data) : {}
+        res.status(200).send(dataset);
+    })
+})
 
+app.get("/lab6/analyze", (req, res) => {
+    fs.readFile('./public/analyze.html', function (err, data) {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(data);
+    });
+})
+
+app.listen(PORT, '127.0.0.1', () => {
+    console.log(`Server is running on http://127.0.0.1:${PORT}`)
+})

@@ -1,21 +1,22 @@
 {
     "currentPhone": {
         "oneplus 8": 1,
-        "iPhone XR": 1
+        "iPhone XR": 1,
+        "iPhone 12": 1
     },
     "ownedProduct": {
         "iPad": 1,
         "Apple Vision Pro": 1,
-        "iPhone": 1,
-        "Airpods": 1
+        "iPhone": 2,
+        "Airpods": 2
     },
     "budget": {
-        "$1000+": 1,
+        "$1000+": 2,
         "$0 - $299": 1
     },
     "preferredOS": {
         "Android": 1,
-        "iOS": 1
+        "iOS": 2
     },
     "nameAndComment": [
         [
@@ -25,6 +26,10 @@
         [
             "Sooriya",
             "Needs more colour"
+        ],
+        [
+            "Arthur Wang",
+            "Noper"
         ]
     ]
 }
