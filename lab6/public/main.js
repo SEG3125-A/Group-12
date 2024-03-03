@@ -7,16 +7,16 @@ const form = document.getElementById("myform")
 function submitForm(e) {
     e.preventDefault()
     const form = $("#myform")
-    console.log(new FormData(form))
-    fetch("/lab6/server/analyze-results", {
+    fetch("/submit-answers", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(form.serializeArray())
+        body: JSON.stringify({ "answers": form.serializeArray() })
     }).then((res) => {
         if (res.ok) {
             console.log("Successfully Submitted Form")
+            console.log(res.body)
         }
 
     }).catch((err) => {

@@ -7,7 +7,7 @@
 	<title>Questionnaire</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<link href="../styles/style.css" rel="stylesheet" type="text/css">
+	<link href="styles/style.css" rel="stylesheet">
 	<script src="main.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -22,7 +22,7 @@
 	</h2>
 	<div class="container-sm">
 		<a href="https://www.apple.com/ca/">
-			<img class="img-fluid" src="../Images/Apple Image.png" alt="https://www.apple.com/ca/"></a>
+			<img class="img-fluid" src="Images/Apple Image.png" alt="https://www.apple.com/ca/"></a>
 	</div>
 	<form class="pt-5" id="myform" onsubmit="submitForm(event)">
 		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
@@ -34,7 +34,7 @@
 		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
 		transform: translatex(-50%);">
 			<label for="model" class="required">What is the model of your current phone?</label>
-			<input type="text" class="form-control" name="model" placeholder="iPhone XR" required>
+			<input type="text" class="form-control" name="currentPhone" placeholder="iPhone XR" required>
 		</div>
 
 		<div class="form-group d-flex flex-column text-white py-3 h4" style="margin-left: 50%;
@@ -42,32 +42,32 @@
 			<label>Which of these Apple products do you own?</label>
 
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="iPhone" id="iPhone" name="ownedProducts">
+				<input class="form-check-input" type="checkbox" value="iPhone" id="iPhone" name="ownedProduct">
 				<label class="form-check-label" for="iPhone">
 					iPhone
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="iPad" id="iPad" name="ownedProducts">
+				<input class="form-check-input" type="checkbox" value="iPad" id="iPad" name="ownedProduct">
 				<label class="form-check-label" for="iPad">
 					iPad
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="MacBook" id="MacBook" name="ownedProducts">
+				<input class="form-check-input" type="checkbox" value="MacBook" id="MacBook" name="ownedProduct">
 				<label class="form-check-label" for="MacBook">
 					MacBook
 				</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="checkbox" value="Airpods" id="Airpods" name="ownedProducts">
+				<input class="form-check-input" type="checkbox" value="Airpods" id="Airpods" name="ownedProduct">
 				<label class="form-check-label" for="Airpods">
 					Airpods
 				</label>
 			</div>
 			<div class="form-check">
 				<input class="form-check-input" type="checkbox" value="Apple Vision Pro" id="Apple Vision Pro"
-					name="ownedProducts">
+					name="ownedProduct">
 				<label class="form-check-label" for="Apple Vision Pro">
 					Apple Vision Pro
 				</label>
@@ -90,20 +90,20 @@
 		transform: translatex(-50%);">
 			<h4 class="required">Which type of smartphone OS do you prefer?</h4>
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="OS" id="iOS" value="iOS" required>
+				<input class="form-check-input" type="radio" name="preferredOS" id="iOS" value="iOS" required>
 				<label class="form-check-label" for="iOS">
 					iOS
 				</label>
 			</div>
 
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="OS" id="Android" value="Android">
+				<input class="form-check-input" type="radio" name="preferredOS" id="Android" value="Android">
 				<label class="form-check-label" for="Android">
 					Android
 				</label>
 			</div>
 			<div class="form-check disabled">
-				<input class="form-check-input" type="radio" name="OS" id="other" value="other">
+				<input class="form-check-input" type="radio" name="preferredOS" id="other" value="other">
 				<label class="form-check-label" for="other">
 					Other
 				</label>
