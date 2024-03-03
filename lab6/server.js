@@ -22,6 +22,14 @@ app.post("/submit-answers", (req, res) => {
         res.status(400).send("Bad Request")
     }
 
+    if (!fs.existsSync('./data/db.json')) {
+        try {
+            fs.writeFileSync('./data/db.json', '');
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
     fs.readFile('./data/db.json', { encoding: 'utf-8' }, (err, data) => {
         let dataset = data ? JSON.parse(data) : {}
         let nameComment = ['', '']
@@ -51,7 +59,9 @@ app.post("/submit-answers", (req, res) => {
         }
         dataset['nameAndComment'] = [...dataset['nameAndComment'], nameComment]
         fs.writeFile('./data/db.json', JSON.stringify(dataset, null, 4), () => {
-            if (err) { throw err }
+            if (err) {
+                throw err
+            }
         })
     })
     res.status(200).send("Submitted Form");

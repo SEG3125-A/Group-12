@@ -1,20 +1,30 @@
 {
     "currentPhone": {
-        "Iphone 13": 1
+        "oneplus 8": 1,
+        "iPhone XR": 1
     },
     "ownedProduct": {
-        "iPad": 1
+        "iPad": 1,
+        "Apple Vision Pro": 1,
+        "iPhone": 1,
+        "Airpods": 1
     },
     "budget": {
-        "$300 - $699": 1
+        "$1000+": 1,
+        "$0 - $299": 1
     },
     "preferredOS": {
-        "Android": 1
+        "Android": 1,
+        "iOS": 1
     },
     "nameAndComment": [
         [
-            "Drake",
-            "Awesome"
+            "Kaitlyn Beck",
+            ""
+        ],
+        [
+            "Sooriya",
+            "Needs more colour"
         ]
     ]
 }

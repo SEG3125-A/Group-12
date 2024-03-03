@@ -16,11 +16,10 @@ function submitForm(e) {
     }).then((res) => {
         if (res.ok) {
             console.log("Successfully Submitted Form")
-            console.log(res.body)
         }
 
     }).catch((err) => {
-        console.log(err)
+        console.error(err)
     })
 
 }
