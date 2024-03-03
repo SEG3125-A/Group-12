@@ -2,34 +2,44 @@
     "currentPhone": {
         "oneplus 8": 1,
         "iPhone XR": 1,
-        "iPhone 12": 1
+        "iPhone 12": 1,
+        "iPhone 13 Pro": 1,
+        "iPhone 13 Mini": 1
     },
     "ownedProduct": {
-        "iPad": 1,
+        "iPad": 2,
         "Apple Vision Pro": 1,
-        "iPhone": 2,
-        "Airpods": 2
+        "iPhone": 4,
+        "Airpods": 3,
+        "MacBook": 1
     },
     "budget": {
         "$1000+": 2,
-        "$0 - $299": 1
+        "$0 - $299": 1,
+        "$700 - $999": 1,
+        "$300 - $699": 1
     },
     "preferredOS": {
         "Android": 1,
-        "iOS": 2
+        "iOS": 3,
+        "other": 1
     },
     "nameAndComment": [
-        [
-            "Kaitlyn Beck",
-            ""
-        ],
         [
             "Sooriya",
             "Needs more colour"
         ],
         [
             "Arthur Wang",
-            "Noper"
+            "Hello World"
+        ],
+        [
+            "Harman",
+            "Hello"
+        ],
+        [
+            "Kaitlyn",
+            "Hi"
         ]
     ]
 }
