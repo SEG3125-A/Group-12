@@ -16,4 +16,4 @@
 
 - Three other icon elements we added were the appointment, location, and about us icons 
 
-[Lab 6](https://seg3125-a.github.io/Group-12/lab6/public)
+[Lab 6](https://seg3125-a.github.io/Group-12/lab6/public) (frontend only)
