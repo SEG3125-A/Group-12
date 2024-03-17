@@ -5,6 +5,7 @@ import Landing from './components/Landing';
 import Booking from './components/Booking';
 import Contact from './components/Contact'
 import FindATeammate from './components/FindATeammate';
+import Services from './components/Services'
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
             <Route path="/" element={<Landing />} exact />
             <Route path="/find-a-teammate" element={<FindATeammate />} exact />
             <Route path="/book" element={<Booking />} exact />
-            <Route path="/services" element={<Landing />} exact />
+            <Route path="/services" element={<Services />} exact />
             <Route path="/contact-us" element={<Contact />} exact />
           </Routes>
         </div>
