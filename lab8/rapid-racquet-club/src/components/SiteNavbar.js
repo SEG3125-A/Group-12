@@ -6,7 +6,7 @@ import './globalStyles.css';
 export default function SiteNavbar() {
     return (
         <>
-            <Navbar expand="lg" className='mt-4'>
+            <Navbar expand="lg" className='my-4'>
                 <Container>
                     <Navbar.Brand href="/" className='col-4 col-lg-auto pr-0 secondary fs-md' style={{ fontFamily: 'Newsreader, serif', fontSize: '32px' }}>Rapid Racquet Club</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
