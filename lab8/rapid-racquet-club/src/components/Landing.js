@@ -1,5 +1,6 @@
 import React from 'react'
 import './globalStyles.css'
+import 'bootstrap/dist/css/bootstrap.css';
 import { Button } from 'react-bootstrap';
 
 

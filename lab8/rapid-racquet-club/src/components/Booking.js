@@ -1,0 +1,43 @@
+import React, { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.css';
+import { Breadcrumb, Button } from 'react-bootstrap';
+import './globalStyles.css';
+import OptionCard from './OptionCard'
+
+export default function Booking() {
+    const [activeCard, setActiveCard] = useState(null);
+
+    const handleCardClick = (title) => {
+        setActiveCard(title);
+    };
+
+    return (
+        <>
+            <div className="container mt-4 pt-4">
+                <div className='row mt-4'>
+                    <div className='col-md-2 d-flex align-items-end'>
+                        <p className='d-flex align-items-end' style={{ fontFamily: 'Newsreader, serif', fontSize: '64px' }}>Book</p>
+                    </div>
+                    <div className='col-md-7 offset-md-1 d-flex align-items-center primary'>
+                        <Breadcrumb>
+                            <Breadcrumb.Item active href="#" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>1. Select Booking Type</Breadcrumb.Item>
+                            <Breadcrumb.Item href="#" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>2. Enter Applicant Details</Breadcrumb.Item>
+                            <Breadcrumb.Item style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>3. Enter Payment Details</Breadcrumb.Item>
+                        </Breadcrumb>
+                    </div>
+                    <div style={{ borderBottom: '1px solid #000' }}></div>
+
+                </div>
+            </div>
+            <div className='d-flex justify-content-center' style={{ gap: '32px', marginTop: '40px' }}>
+                <OptionCard imageSrc={'book-book-a-course.png'} cardTitle={'Book a Course'} onClick={() => handleCardClick('Book a Course')} isActive={activeCard === 'Book a Course'} />
+                <OptionCard imageSrc={'book-drop-in.png'} cardTitle={'Book a Drop-In Session'} onClick={() => handleCardClick('Book a Drop-In Session')} isActive={activeCard === 'Book a Drop-In Session'} />
+                <OptionCard imageSrc={'book-event.png'} cardTitle={'Book Court for an Event'} onClick={() => handleCardClick('Book Court for an Event')} isActive={activeCard === 'Book Court for an Event'} />
+            </div>
+            {activeCard &&
+                <div className='d-flex container justify-content-end'>
+                    <Button style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '100px' }} className="mx-3 fw-semibold secondary-bg border-0" >Continue to Applicant Details</Button>
+                </div>}
+        </>
+    )
+}
