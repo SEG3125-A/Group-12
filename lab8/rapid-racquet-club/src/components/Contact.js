@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
+import './globalStyles.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 export default function Contact() {
