@@ -3,15 +3,35 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Breadcrumb, Button } from 'react-bootstrap';
 import './globalStyles.css';
 import OptionCard from './OptionCard'
+import ApplicantDetailsBook from './ApplicantDetailsBook';
+import { Link } from 'react-router-dom';
 
 export default function Booking() {
     const [activeCard, setActiveCard] = useState(null);
+
+    const m = {
+        1: "/book",
+        2: "/book/details",
+        3: "/book/payment",
+    }
+
+    const [currentStep, setCurrentStep] = useState(1); // Initial step
+
+    // Function to handle going to the previous step
+    const goToPreviousStep = () => {
+        setCurrentStep(prevStep => prevStep - 1);
+    };
+
+    // Function to handle going to the next step
+    const goToNextStep = () => {
+        setCurrentStep(prevStep => prevStep + 1);
+    };
 
     const handleCardClick = (title) => {
         setActiveCard(title);
     };
 
-    return (
+    return ( 
         <>
             <div className="container mt-4 pt-4">
                 <div className='row mt-4'>
@@ -20,23 +40,26 @@ export default function Booking() {
                     </div>
                     <div className='col-md-7 offset-md-1 d-flex align-items-center primary'>
                         <Breadcrumb>
-                            <Breadcrumb.Item active href="#" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>1. Select Booking Type</Breadcrumb.Item>
-                            <Breadcrumb.Item href="#" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>2. Enter Applicant Details</Breadcrumb.Item>
-                            <Breadcrumb.Item style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>3. Enter Payment Details</Breadcrumb.Item>
+                            <Breadcrumb.Item as={Link} to="/book" active onClick={() => setCurrentStep(1)} style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>1. Select Booking Type</Breadcrumb.Item>
+                            <Breadcrumb.Item as={Link} to="/book/details" active onClick={() => setCurrentStep(2)} style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>2. Enter Applicant Details</Breadcrumb.Item>
+                            <Breadcrumb.Item as={Link} to="/book/events" active onClick={() => setCurrentStep(3)} style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>3. Enter Payment Details</Breadcrumb.Item>
                         </Breadcrumb>
+
+                        {currentStep > 1 && <Button as={Link} to={m[currentStep - 1]} onClick={goToPreviousStep}>Back</Button>}
+                        {currentStep < 3 && <Button as={Link} to={m[currentStep + 1]} onClick={goToNextStep}>Next</Button>}
                     </div>
                     <div style={{ borderBottom: '1px solid #000' }}></div>
 
                 </div>
             </div>
             <div className='d-flex justify-content-center' style={{ gap: '32px', marginTop: '40px' }}>
-                <OptionCard imageSrc={'book-book-a-course.png'} cardTitle={'Book a Course'} onClick={() => handleCardClick('Book a Course')} isActive={activeCard === 'Book a Course'} />
-                <OptionCard imageSrc={'book-drop-in.png'} cardTitle={'Book a Drop-In Session'} onClick={() => handleCardClick('Book a Drop-In Session')} isActive={activeCard === 'Book a Drop-In Session'} />
-                <OptionCard imageSrc={'book-event.png'} cardTitle={'Book Court for an Event'} onClick={() => handleCardClick('Book Court for an Event')} isActive={activeCard === 'Book Court for an Event'} />
+                <OptionCard imageSrc={'book-book-a-course.png'} cardTitle={'Book a Course'} onClick={() => handleCardClick('Book a Course')} isActive={activeCard === 'Book a Course'} destinationLink={'/book'}/>
+                <OptionCard imageSrc={'book-drop-in.png'} cardTitle={'Book a Drop-In Session'} onClick={() => handleCardClick('Book a Drop-In Session')} isActive={activeCard === 'Book a Drop-In Session'} destinationLink={'/book'}/>
+                <OptionCard imageSrc={'book-event.png'} cardTitle={'Book Court for an Event'} onClick={() => handleCardClick('Book Court for an Event')} isActive={activeCard === 'Book Court for an Event'} destinationLink={'/book'}/>
             </div>
             {activeCard &&
                 <div className='d-flex container justify-content-end'>
-                    <Button style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '100px' }} className="mx-3 fw-semibold secondary-bg border-0" >Continue to Applicant Details</Button>
+                    <Button style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '100px' }} className="mx-3 fw-semibold secondary-bg border-0" onClick={() => goToNextStep()}>Continue to Applicant Details</Button>
                 </div>}
         </>
     )
