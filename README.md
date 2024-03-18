@@ -18,4 +18,4 @@
 
 [Lab 6](https://seg3125-a.github.io/Group-12/lab6/public) (frontend only)
 
-[Lab 6]() (run locally)
+[Lab 8]() (run locally)
