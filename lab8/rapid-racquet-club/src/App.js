@@ -7,6 +7,7 @@ import Contact from './components/Contact'
 import FindATeammate from './components/FindATeammate';
 import Services from './components/Services'
 import ApplicantDetailsBook from './components/ApplicantDetailsBook';
+import ApplicantDetailsPayment from './components/ApplicantDetailsPayment';
 import WorkInProgress from './components/WorkInProgress';
 
 function App() {
@@ -21,8 +22,8 @@ function App() {
             <Route path="/book" element={<Booking />} exact />
             <Route path="/services" element={<Services />} exact />
             <Route path="/contact-us" element={<Contact />} exact />
-            <Route path="/book/details" element={<WorkInProgress />} exact />
-            <Route path="/book/events" element={<WorkInProgress />} exact />
+            <Route path="/book/details" element={<ApplicantDetailsBook />} exact />
+            <Route path="/book/payment" element={<ApplicantDetailsPayment />} exact />
             <Route path="/wip" element={<WorkInProgress />} exact />
           </Routes>
         </div>
