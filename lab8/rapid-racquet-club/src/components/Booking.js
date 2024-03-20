@@ -5,6 +5,7 @@ import './globalStyles.css';
 import OptionCard from './OptionCard'
 import ApplicantDetailsBook from './ApplicantDetailsBook';
 import { Link } from 'react-router-dom';
+import PageHeader from './PageHeader'
 
 export default function Booking() {
     const [activeCard, setActiveCard] = useState(null);
@@ -31,31 +32,13 @@ export default function Booking() {
         setActiveCard(title);
     };
 
-    return ( 
+    return (
         <>
-            <div className="container mt-4 pt-4">
-                <div className='row mt-4'>
-                    <div className='col-md-2 d-flex align-items-end'>
-                        <p className='d-flex align-items-end' style={{ fontFamily: 'Newsreader, serif', fontSize: '64px' }}>Book</p>
-                    </div>
-                    <div className='col-md-7 offset-md-1 d-flex align-items-center primary'>
-                        <Breadcrumb>
-                            <Breadcrumb.Item as={Link} to="/book" active onClick={() => setCurrentStep(1)} style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>1. Select Booking Type</Breadcrumb.Item>
-                            <Breadcrumb.Item as={Link} to="/book/details" active onClick={() => setCurrentStep(2)} style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>2. Enter Applicant Details</Breadcrumb.Item>
-                            <Breadcrumb.Item as={Link} to="/book/events" active onClick={() => setCurrentStep(3)} style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>3. Enter Payment Details</Breadcrumb.Item>
-                        </Breadcrumb>
-
-                        {currentStep > 1 && <Button as={Link} to={m[currentStep - 1]} onClick={goToPreviousStep}>Back</Button>}
-                        {currentStep < 3 && <Button as={Link} to={m[currentStep + 1]} onClick={goToNextStep}>Next</Button>}
-                    </div>
-                    <div style={{ borderBottom: '1px solid #000' }}></div>
-
-                </div>
-            </div>
+            <PageHeader text={'Book'} />
             <div className='d-flex justify-content-center' style={{ gap: '32px', marginTop: '40px' }}>
-                <OptionCard imageSrc={'book-book-a-course.png'} cardTitle={'Book a Course'} onClick={() => handleCardClick('Book a Course')} isActive={activeCard === 'Book a Course'} destinationLink={'/book'}/>
-                <OptionCard imageSrc={'book-drop-in.png'} cardTitle={'Book a Drop-In Session'} onClick={() => handleCardClick('Book a Drop-In Session')} isActive={activeCard === 'Book a Drop-In Session'} destinationLink={'/book'}/>
-                <OptionCard imageSrc={'book-event.png'} cardTitle={'Book Court for an Event'} onClick={() => handleCardClick('Book Court for an Event')} isActive={activeCard === 'Book Court for an Event'} destinationLink={'/book'}/>
+                <OptionCard imageSrc={'book-book-a-course.png'} cardTitle={'Book a Course'} onClick={() => handleCardClick('Book a Course')} isActive={activeCard === 'Book a Course'} destinationLink={'/book'} />
+                <OptionCard imageSrc={'book-drop-in.png'} cardTitle={'Book a Drop-In Session'} onClick={() => handleCardClick('Book a Drop-In Session')} isActive={activeCard === 'Book a Drop-In Session'} destinationLink={'/book'} />
+                <OptionCard imageSrc={'book-event.png'} cardTitle={'Book Court for an Event'} onClick={() => handleCardClick('Book Court for an Event')} isActive={activeCard === 'Book Court for an Event'} destinationLink={'/book'} />
             </div>
             {activeCard &&
                 <div className='d-flex container justify-content-end'>

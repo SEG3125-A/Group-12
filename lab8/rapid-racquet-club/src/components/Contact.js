@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
 import './globalStyles.css';
 import 'bootstrap/dist/css/bootstrap.css';
-
+import PageHeader from './PageHeader'
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -33,14 +33,7 @@ export default function Contact() {
 
     return (
         <>
-            <div className="container mt-4 pt-4">
-                <div className='mt-4'>
-                    <div className='d-flex align-items-end'>
-                        <p className='d-flex align-items-end' style={{ fontFamily: 'Newsreader, serif', fontSize: '64px' }}>Contact Us</p>
-                    </div>
-                    <div style={{ borderBottom: '1px solid #000' }}></div>
-                </div>
-            </div>
+            <PageHeader text={'Contact Us'} />
 
             <div className='row container d-flex my-4'>
                 <div className='col-md-7 offset-md-3'>

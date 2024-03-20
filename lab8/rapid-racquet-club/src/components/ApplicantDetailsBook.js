@@ -2,20 +2,14 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Breadcrumb, Button } from 'react-bootstrap';
 import './globalStyles.css';
+import PageHeader from './PageHeader';
 
 export default function ApplicantDetailsBook() {
-const [currentStep, setCurrentStep] = useState(2); // Initial step
-  return (
-    <>
-        <div className="container mt-4 pt-4">
-                    <div className='row mt-4'>
-                        <div className='col-md-2 d-flex align-items-end' style={{ whiteSpace: 'nowrap' }}>
-                            <p className='d-flex align-items-end' style={{ fontFamily: 'Newsreader, serif', fontSize: '64px' }}>Applicant Details</p>
-                        </div>
-                        <div style={{ borderBottom: '1px solid #000' }}></div>
-                    </div>
-        </div>
-        <div className='row container d-flex my-4'>
+    const [currentStep, setCurrentStep] = useState(2); // Initial step
+    return (
+        <>
+            <PageHeader text={'Applicant Details'} />
+            <div className='row container d-flex my-4'>
                 <div className='col-md-7 offset-md-3'>
                     <form>
                         <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
@@ -39,10 +33,10 @@ const [currentStep, setCurrentStep] = useState(2); // Initial step
                 </div>
             </div>
 
-        
-    </>
-    
 
-        
-  )
+        </>
+
+
+
+    )
 }

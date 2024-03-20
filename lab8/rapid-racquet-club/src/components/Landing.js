@@ -2,7 +2,7 @@ import React from 'react'
 import './globalStyles.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Button } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 
 export default function Landing() {
     return (
@@ -18,7 +18,9 @@ export default function Landing() {
             </div>
 
             <div className="d-flex justify-content-center align-items-center primary" style={{ marginTop: '75px' }}>
-                <Button style={{ borderRadius: "8px", width: '289px', height: '64px', fontFamily: 'Inter, serif', fontSize: '20px' }} className="mx-3 fw-semibold secondary-bg border-0 mb-4">View Our Services</Button>
+                <Link to="/services">
+                    <Button style={{ borderRadius: "8px", width: '289px', height: '64px', fontFamily: 'Inter, serif', fontSize: '20px' }} className="mx-3 fw-semibold secondary-bg border-0 mb-4">View Our Services</Button>
+                </Link>
             </div>
 
             <div className="d-flex justify-content-center align-items-center primary p-4" style={{ marginTop: '50px', marginBottom: '75px', gap: '20px', overflow: 'hidden' }}>
@@ -40,7 +42,7 @@ export default function Landing() {
                         <p style={{ fontSize: '14px', fontFamily: 'Inter, serif' }}>WHAT WE BELIEVE</p>
                     </div>
                     <div className="col-md-8 d-flex justify-content-center">
-                        <p style={{ marginBottom:'300px', fontFamily: 'Inter, serif', fontSize: '20px', maxWidth: '822px' }}> Empowering Lives Through Shuttle Flight: Our Mission at Rapid Racquet Club  is to cultivate a community of spirited players, fostering sportsmanship, skill development, and a love for badminton. Together, we aim to create an environment where every smash is a step towards personal growth, camaraderie, and the pursuit of excellence on and off the court.</p>
+                        <p style={{ marginBottom: '300px', fontFamily: 'Inter, serif', fontSize: '20px', maxWidth: '822px' }}> Empowering Lives Through Shuttle Flight: Our Mission at Rapid Racquet Club  is to cultivate a community of spirited players, fostering sportsmanship, skill development, and a love for badminton. Together, we aim to create an environment where every smash is a step towards personal growth, camaraderie, and the pursuit of excellence on and off the court.</p>
                     </div>
                 </div>
             </div >
