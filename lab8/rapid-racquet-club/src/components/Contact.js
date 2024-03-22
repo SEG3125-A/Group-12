@@ -34,10 +34,9 @@ export default function Contact() {
     return (
         <>
             <PageHeader text={'Contact Us'} />
-
-            <div className='row container d-flex my-4'>
-                <div className='col-md-7 offset-md-3'>
-                    <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
+                <div className='row container my-4'>
+                    <div className='col-md-7 offset-md-3'>
                         <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
                             <label htmlFor="name" className="col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>Name</label>
                             <input type="text" className="col-sm-2 form-control form-control-sm rounded-pill" id="name" name="name" value={formData.name} onChange={handleChange} style={{ width: '70%' }} />
@@ -54,17 +53,20 @@ export default function Contact() {
                             <label htmlFor="inquiry" className="col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>Inquiry</label>
                             <textarea className="col-sm-2 form-control form-control-sm" id="inquiry" name="inquiry" rows="4" value={formData.inquiry} onChange={handleChange} style={{ width: '70%', borderRadius: '24px' }}></textarea>
                         </div>
-                        <Button type='submit' style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '40px', marginBottom: '100px' }} className="mx-3 fw-semibold secondary-bg border-0">Submit</Button>
-                    </form>
-                </div>
-                <div className='col-md-2'>
-                    <div className='tertiary-bg border' style={{ width: '399px', height: '312px', fontFamily: 'Inter, serif', fontSize: '20px', borderRadius: '24px' }}>
-                        <p style={{ margin: '24px' }}>
-                            <b>Location</b><br />123 Location St Province, Canada ABC 123 <b><br /><br />Phone Number</b><br />(123) 456-7890<br /><br /><b>Email</b><br />contact@rrr.ca
-                        </p>
                     </div>
+                    <div className='col-md-2'>
+                        <div className='tertiary-bg border' style={{ width: '399px', height: '312px', fontFamily: 'Inter, serif', fontSize: '20px', borderRadius: '24px' }}>
+                            <p style={{ margin: '24px' }}>
+                                <b>Location</b><br />123 Location St Province, Canada ABC 123 <b><br /><br />Phone Number</b><br />(123) 456-7890<br /><br /><b>Email</b><br />contact@rrr.ca
+                            </p>
+                        </div>
+                        <div className="d-flex align-items-end" style={{ width: '399px', height: '180px' }}>
+                            <Button type='submit' style={{ borderRadius: "8px", width: '100%', height: '48px' }} className="fw-semibold secondary-bg border-0">Submit</Button>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
+            </form>
         </>
     )
 }
