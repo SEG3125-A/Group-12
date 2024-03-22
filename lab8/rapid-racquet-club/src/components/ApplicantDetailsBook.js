@@ -34,8 +34,7 @@ export default function ApplicantDetailsBook() {
 
                 </div>
             </div>
-            <div className='row container d-flex my-4'>
-                <div className='col-md-7 offset-md-3'>
+            <div className='container my-4'>
                     <form>
                         <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
                             <label htmlFor="name" className="col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>Name</label>
@@ -55,7 +54,6 @@ export default function ApplicantDetailsBook() {
                             </Link>
                         </div>
                     </form>
-                </div>
             </div>
 
 
