@@ -3,23 +3,26 @@ import './globalStyles.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next'
 
 export default function Landing() {
+    const { t } = useTranslation()
+
     return (
         <>
             <div className="d-flex justify-content-center align-items-center" style={{ marginTop: '75px' }}>
                 <div className="text-center">
-                    <p style={{ fontFamily: 'Newsreader, serif', fontSize: '64px', maxWidth: '1020px', padding: '0 15px' }} className="primary display-4">Elevating Lives, One Shuttle at a Time</p>
+                    <p style={{ fontFamily: 'Newsreader, serif', fontSize: '64px', maxWidth: '1020px', padding: '0 15px' }} className="primary display-4">{t('landing-jumbo')}</p>
                 </div>
             </div>
 
             <div className="d-flex justify-content-center align-items-center primary" style={{ marginTop: '75px' }}>
-                <p style={{ fontFamily: 'Inter, serif', fontSize: '20px', maxWidth: '736px', padding: '0 15px' }}><b>Rapid Racquet Club</b> is a club dedicated to teaching all ages and all skill levels of badminton. Those who know the sport well already can register for our drop in program.</p>
-            </div>
+                <p style={{ fontFamily: 'Inter, serif', fontSize: '20px', maxWidth: '736px', padding: '0 15px' }}><Trans>{t('landing-description')}</Trans></p >
+            </div >
 
             <div className="d-flex justify-content-center align-items-center primary" style={{ marginTop: '75px' }}>
                 <Link to="/services">
-                    <Button style={{ borderRadius: "8px", width: '289px', height: '64px', fontFamily: 'Inter, serif', fontSize: '20px' }} className="mx-3 fw-semibold secondary-bg border-0 mb-4">View Our Services</Button>
+                    <Button style={{ borderRadius: "8px", width: '289px', height: '64px', fontFamily: 'Inter, serif', fontSize: '20px' }} className="mx-3 fw-semibold secondary-bg border-0 mb-4">{t('landing-button')}</Button>
                 </Link>
             </div>
 
@@ -39,10 +42,10 @@ export default function Landing() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-2 fw-semibold">
-                        <p style={{ fontSize: '14px', fontFamily: 'Inter, serif' }}>WHAT WE BELIEVE</p>
+                        <p style={{ fontSize: '14px', fontFamily: 'Inter, serif' }}>{t('landing-leading')}</p>
                     </div>
                     <div className="col-md-8 d-flex justify-content-center">
-                        <p style={{ marginBottom: '300px', fontFamily: 'Inter, serif', fontSize: '20px', maxWidth: '822px' }}> Empowering Lives Through Shuttle Flight: Our Mission at Rapid Racquet Club  is to cultivate a community of spirited players, fostering sportsmanship, skill development, and a love for badminton. Together, we aim to create an environment where every smash is a step towards personal growth, camaraderie, and the pursuit of excellence on and off the court.</p>
+                        <p style={{ marginBottom: '300px', fontFamily: 'Inter, serif', fontSize: '20px', maxWidth: '822px' }}>{t('landing-description-2')}</p>
                     </div>
                 </div>
             </div >
