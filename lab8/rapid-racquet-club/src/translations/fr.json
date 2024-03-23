@@ -66,5 +66,16 @@
   "find-teammate-field-5-option-2": "Double : Coéquipier",
   "find-teammate-field-5-option-3": "Double : Adversaire",
   "find-teammate-field-6": "À propos de vous",
-  "find-teammate-submit": "Envoyer la demande"
+  "find-teammate-submit": "Envoyer la demande",
+  "form-error-email": "Veuillez saisir une adresse e-mail valide",
+  "form-error-name": "Veuillez saisir un nom",
+  "form-error-phone": "Veuillez saisir un numéro de téléphone valide",
+  "form-error-experience": "Veuillez sélectionner un niveau d'expérience",
+  "form-error-format": "Veuillez sélectionner un type de format",
+  "form-error-card-number": "Veuillez saisir un numéro de carte valide",
+  "form-error-card-cvv": "Veuillez saisir le format ###.",
+  "form-error-card-expiry": "Veuillez saisir le format MM/AA.",
+  "form-error-inquiry": "Veuillez saisir une demande",
+  "form-success": "Formulaire soumis avec succès !",
+  "back-to-home": "Retour à la page d'accueil"
 }

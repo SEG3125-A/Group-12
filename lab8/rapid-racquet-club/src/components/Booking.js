@@ -47,12 +47,16 @@ export default function Booking() {
                 <OptionCard imageSrc={'book-drop-in.png'} cardTitle={t('book-card-title-2')} onClick={() => handleCardClick('Book a Drop-In Session')} isActive={activeCard === 'Book a Drop-In Session'} destinationLink={'/book'} />
                 <OptionCard imageSrc={'book-event.png'} cardTitle={t('book-card-title-3')} onClick={() => handleCardClick('Book Court for an Event')} isActive={activeCard === 'Book Court for an Event'} destinationLink={'/book'} />
             </div>
-            {activeCard &&
-                <div className='d-flex container justify-content-end'>
-                    <Link to={m[2]}>
-                        <Button style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '100px' }} className="mx-3 fw-semibold secondary-bg border-0">{t('book-submit')}</Button>
-                    </Link>
-                </div>}
+
+
+            <div className='d-flex container justify-content-end'>
+                <Link to={'/'}>
+                    <Button style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '100px' }} className="mx-3 fw-semibold bg-secondary border-0">{t('back-to-home')}</Button>
+                </Link>
+                {activeCard && <Link to={m[2]}>
+                    <Button style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '100px' }} className="mx-3 fw-semibold secondary-bg border-0">{t('book-submit')}</Button>
+                </Link>}
+            </div>
         </>
     )
 }

@@ -66,5 +66,16 @@
   "find-teammate-field-5-option-2": "Doubles: Teammate",
   "find-teammate-field-5-option-3": "Doubles: Opponent",
   "find-teammate-field-6": "About you",
-  "find-teammate-submit": "Submit Request"
+  "find-teammate-submit": "Submit Request",
+  "form-error-email": "Please Enter a Valid Email",
+  "form-error-name": "Please Enter a Name",
+  "form-error-phone": "Please Enter a Valid Phone Number",
+  "form-error-experience": "Please Select an Experience Level",
+  "form-error-format": "Please Select a Format Type",
+  "form-error-card-number": "Please Enter a Valid Card Number",
+  "form-error-card-cvv": "Please Enter in the format ###.",
+  "form-error-card-expiry": "Please Enter in the format MM/YY.",
+  "form-error-inquiry": "Please Enter an Inquiry",
+  "form-success": "Form submitted successfully!",
+  "back-to-home": "Back to Home"
 }

@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 export default function ApplicantDetailsBook() {
     const { t } = useTranslation()
 
-    const [currentStep, setCurrentStep] = useState(2); 
+    const [currentStep, setCurrentStep] = useState(2);
 
     const m = {
         1: "/book",
@@ -38,18 +38,21 @@ export default function ApplicantDetailsBook() {
             <div className='container my-4'>
                 <form>
                     <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
-                        <label htmlFor="name" className="col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('details-field-1')}</label>
-                        <input type="text" className="col-sm-2 form-control form-control-sm rounded-pill" id="name" name="name" style={{ width: '70%' }} />
+                        <label htmlFor="name" className="required col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('details-field-1')}</label>
+                        <input required type="text" className="col-sm-2 form-control form-control-sm rounded-pill" id="name" name="name" style={{ width: '70%' }} />
                     </div>
                     <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
-                        <label htmlFor="email" className="col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('details-field-2')}</label>
-                        <input type="email" className="col-sm-2 form-control form-control-sm rounded-pill" id="email" name="email" style={{ width: '70%' }} />
+                        <label htmlFor="email" className="required col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('details-field-2')}</label>
+                        <input required type="email" className="col-sm-2 form-control form-control-sm rounded-pill" id="email" name="email" style={{ width: '70%' }} />
                     </div>
                     <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
-                        <label htmlFor="phone" className="col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('details-field-3')}</label>
-                        <input type="tel" className="col-sm-2 form-control form-control-sm rounded-pill" id="phone" name="phone" style={{ width: '70%' }} />
+                        <label htmlFor="phone" className="required col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('details-field-3')}</label>
+                        <input required type="tel" className="col-sm-2 form-control form-control-sm rounded-pill" id="phone" name="phone" style={{ width: '70%' }} />
                     </div>
                     <div className='d-flex container justify-content-end'>
+                        <Link to={'/'}>
+                            <Button style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '100px' }} className="mx-3 fw-semibold bg-secondary border-0">{t('back-to-home')}</Button>
+                        </Link>
                         <Link to={m[3]}>
                             <Button style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '100px' }} className="mx-3 fw-semibold secondary-bg border-0">{t('details-submit')}</Button>
                         </Link>
