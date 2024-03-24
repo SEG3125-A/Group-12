@@ -62,21 +62,21 @@ export default function FindATeammate() {
                         <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
                             <label htmlFor="name" className="required col-sm-3 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('find-teammate-field-1')}</label>
                             <input required type="text" className="col-sm-2 form-control form-control-sm rounded-pill" id="name" name="name" value={formData.name} onChange={handleChange} style={{ width: '70%' }} />
-                            <div class="invalid-feedback">
+                            <div className="invalid-feedback">
                                 {t('form-error-name')}
                             </div>
                         </div>
                         <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
                             <label htmlFor="email" className="required col-sm-3 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('find-teammate-field-2')}</label>
                             <input required type="email" className="col-sm-2 form-control form-control-sm rounded-pill" id="email" name="email" value={formData.email} onChange={handleChange} style={{ width: '70%' }} />
-                            <div class="invalid-feedback">
+                            <div className="invalid-feedback">
                                 {t('form-error-email')}
                             </div>
                         </div>
                         <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
                             <label htmlFor="phone" className="required col-sm-3 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('find-teammate-field-3')}</label>
                             <input pattern='[0-9]+' required type="tel" className="col-sm-2 form-control form-control-sm rounded-pill" id="phone" name="phone" value={formData.phone} onChange={handleChange} style={{ width: '70%' }} />
-                            <div class="invalid-feedback">
+                            <div className="invalid-feedback">
                                 {t('form-error-phone')}
                             </div>
                         </div>
@@ -88,7 +88,7 @@ export default function FindATeammate() {
                                 <option value="Intermediate">{t('find-teammate-field-4-option-2')}</option>
                                 <option value="Expert">{t('find-teammate-field-4-option-3')}</option>
                             </select>
-                            <div class="invalid-feedback">
+                            <div className="invalid-feedback">
                                 {t('form-error-experience')}
                             </div>
                         </div>
@@ -100,7 +100,7 @@ export default function FindATeammate() {
                                 <option value="doubles - teammate">{t('find-teammate-field-5-option-2')}</option>
                                 <option value="doubles - opponent">{t('find-teammate-field-5-option-3')}</option>
                             </select>
-                            <div class="invalid-feedback">
+                            <div className="invalid-feedback">
                                 {t('form-error-format')}
                             </div>
                         </div>

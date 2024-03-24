@@ -79,29 +79,29 @@ export default function ApplicantDetailsPayment() {
                     <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
                         <label htmlFor="name" className="required col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('payment-field-1')}</label>
                         <input required type="text" className="col-sm-2 form-control form-control-sm rounded-pill" id="name" name="name" value={formData.name} onChange={handleChange} style={{ width: '70%' }} />
-                        <div class="invalid-feedback">
+                        <div className="invalid-feedback">
                             {t('form-error-name')}
                         </div>
                     </div>
                     <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
                         <label htmlFor="cardNumber" className="required col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('payment-field-2')}</label>
                         <input required type="text" className="col-sm-2 form-control form-control-sm rounded-pill" id="cardNumber" name="cardNumber" value={formData.cardNumber} onChange={handleChange} style={{ width: '70%' }} pattern="[0-9]+" />
-                        <div class="invalid-feedback">
+                        <div className="invalid-feedback">
                             {t('form-error-card-number')}
                         </div>
                     </div>
                     <div className="form-group row mb-4" style={{ borderRadius: '24px' }}>
                         <div className='col-sm-6 tertiary-bg p-4 border' style={{ borderRadius: '24px' }}>
-                            <label htmlFor="expiryDate" className="required col-sm-3 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('payment-field-3')}</label>
-                            <input required maxLength={"5"} type="text" className="col-sm-2 form-control form-control-sm rounded-pill" id="expiryDate" name="expiryDate" value={formData.expiryDate} onChange={handleChange} style={{ width: '70%' }} pattern="(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})" />
-                            <div class="invalid-feedback">
+                            <label htmlFor="expiryDate" className="required col-sm-4 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('payment-field-3')}</label>
+                            <input required maxLength={"5"} type="text" className="col-sm-1 form-control form-control-sm rounded-pill" id="expiryDate" name="expiryDate" value={formData.expiryDate} onChange={handleChange} style={{ width: '70%' }} pattern="(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})" />
+                            <div className="invalid-feedback">
                                 {t('form-error-card-expiry')}
                             </div>
                         </div>
                         <div className='col-sm-5 offset-sm-1 tertiary-bg p-4 border' style={{ borderRadius: '24px' }}>
                             <label htmlFor="cvv" className="required col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('payment-field-4')}</label>
                             <input required pattern="[0-9]{3}" type="text" maxLength={"3"} className="col-sm-2 form-control form-control-sm rounded-pill" id="cvv" name="cvv" value={formData.cvv} onChange={handleChange} style={{ width: '70%' }} />
-                            <div class="invalid-feedback">
+                            <div className="invalid-feedback">
                                 {t('form-error-card-cvv')}
                             </div>
                         </div>

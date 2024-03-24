@@ -54,30 +54,30 @@ export default function Contact() {
                 <div className='row container my-4'>
                     <div className='col-md-7 offset-md-3'>
                         <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
-                            <label htmlFor="name" className="required col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('contact-field-1')}</label>
+                            <label htmlFor="name" className="required col-sm-3 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('contact-field-1')}</label>
                             <input required type="text" className="col-sm-2 form-control form-control-sm rounded-pill" id="name" name="name" value={formData.name} onChange={handleChange} style={{ width: '70%' }} />
-                            <div class="invalid-feedback">
+                            <div className="invalid-feedback">
                                 {t('form-error-name')}
                             </div>
                         </div>
                         <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
-                            <label htmlFor="email" className="required col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('contact-field-2')}</label>
+                            <label htmlFor="email" className="required col-sm-3 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('contact-field-2')}</label>
                             <input required type="email" className="col-sm-2 form-control form-control-sm rounded-pill" id="email" name="email" value={formData.email} onChange={handleChange} style={{ width: '70%' }} />
-                            <div class="invalid-feedback">
+                            <div className="invalid-feedback">
                                 {t('form-error-email')}
                             </div>
                         </div>
                         <div className="form-group row mb-4 tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
-                            <label htmlFor="phone" className="required col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('contact-field-3')}</label>
+                            <label htmlFor="phone" className="required col-sm-3 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('contact-field-3')}</label>
                             <input pattern='[0-9]+' required type="tel" className="col-sm-2 form-control form-control-sm rounded-pill" id="phone" name="phone" value={formData.phone} onChange={handleChange} style={{ width: '70%' }} />
-                            <div class="invalid-feedback">
+                            <div className="invalid-feedback">
                                 {t('form-error-phone')}
                             </div>
                         </div>
                         <div className="form-group row tertiary-bg p-4 border" style={{ borderRadius: '24px' }}>
-                            <label htmlFor="inquiry" className="required col-sm-2 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('contact-field-4')}</label>
+                            <label htmlFor="inquiry" className="required col-sm-3 col-form-label primary fw-semibold" style={{ fontFamily: 'Inter, serif', fontSize: '20px' }}>{t('contact-field-4')}</label>
                             <textarea required className="col-sm-2 form-control form-control-sm" id="inquiry" name="inquiry" rows="4" value={formData.inquiry} onChange={handleChange} style={{ width: '70%', borderRadius: '24px' }}></textarea>
-                            <div class="invalid-feedback">
+                            <div className="invalid-feedback">
                                 {t('form-error-inquiry')}
                             </div>
                         </div>
