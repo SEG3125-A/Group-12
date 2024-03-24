@@ -53,3 +53,68 @@ label.required::after {
   color: red;
   margin-left: 4px; /* Adjust the spacing between the label text and the asterisk */
 }
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-header {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.calendar {
+  width: 300px;
+  max-width: 100%;
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.react-calendar__navigation {
+  background: #426b1f; /* Blue color for navigation */
+  border-radius: 10px 10px 0 0;
+}
+
+.react-calendar__navigation button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff; /* White color for navigation buttons */
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  opacity: 0.8;
+}
+
+.react-calendar__navigation button[disabled] {
+  cursor: not-allowed;
+}
+
+.react-calendar__tile {
+  padding: 0.75rem;
+  font-size: 14px;
+  border-radius: 50%;
+}
+
+.react-calendar__tile--now {
+  background-color: #426b1f; /* Blue color for current day */
+  color: #fff;
+}
+
+.react-calendar__tile--active {
+  background-color: #f0f0f0; /* Light gray color for selected day */
+}
+
+/* Range selection styling */
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #d6e4ff; /* Light blue color on hover for range selection */
+}

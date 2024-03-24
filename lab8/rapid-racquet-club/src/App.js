@@ -9,12 +9,14 @@ import Services from './components/Services';
 import ApplicantDetailsBook from './components/ApplicantDetailsBook';
 import ApplicantDetailsPayment from './components/ApplicantDetailsPayment';
 import Courses from './components/Courses';
+import Events from './components/Events';
 import WorkInProgress from './components/WorkInProgress';
 import i18n from 'i18next'; // Import useTranslation here
 import React, { useEffect, useState, Suspense } from 'react';
 import { initReactI18next } from 'react-i18next';
 import translationsEn from './translations/en.json';
 import translationsFr from './translations/fr.json';
+import DropIn from './components/DropIn';
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -48,6 +50,8 @@ function App() {
             <Route path="/book/details" element={<ApplicantDetailsBook />} exact />
             <Route path="/book/payment" element={<ApplicantDetailsPayment />} exact />
             <Route path="/services/courses" element={<Courses />} exact />
+            <Route path="/services/drop-in" element={<DropIn />} exact />
+            <Route path="/services/events" element={<Events />} exact />
             <Route path="/wip" element={<WorkInProgress />} exact />
           </Routes>
         </div>

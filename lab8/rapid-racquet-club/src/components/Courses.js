@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-export default function Services() {
+export default function Courses() {
     const { t } = useTranslation()
     return (
         <>
