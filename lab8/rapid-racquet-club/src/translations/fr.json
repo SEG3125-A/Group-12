@@ -77,5 +77,6 @@
   "form-error-card-expiry": "Veuillez saisir le format MM/AA.",
   "form-error-inquiry": "Veuillez saisir une demande",
   "form-success": "Formulaire soumis avec succès !",
-  "back-to-home": "Retour à la page d'accueil"
+  "back-to-home": "Retour à la page d'accueil",
+  "lang-toggle": "English"
 }

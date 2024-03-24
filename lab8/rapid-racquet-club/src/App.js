@@ -1,33 +1,32 @@
 import './App.css';
 import SiteNavbar from './components/SiteNavbar';
-import { BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Landing from './components/Landing';
 import Booking from './components/Booking';
-import Contact from './components/Contact'
+import Contact from './components/Contact';
 import FindATeammate from './components/FindATeammate';
-import Services from './components/Services'
+import Services from './components/Services';
 import ApplicantDetailsBook from './components/ApplicantDetailsBook';
 import ApplicantDetailsPayment from './components/ApplicantDetailsPayment';
 import WorkInProgress from './components/WorkInProgress';
-import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
-import translationsEn from './translations/en.json'
-import translationsFr from './translations/fr.json'
+import i18n from 'i18next'; // Import useTranslation here
+import React, { useEffect, useState, Suspense } from 'react';
+import { initReactI18next } from 'react-i18next';
+import translationsEn from './translations/en.json';
+import translationsFr from './translations/fr.json';
 
-i18n.use(initReactI18next).init({
-  resources: {
-      en: { translation: translationsEn },
-      fr: { translation: translationsFr }
-  },
-  lng: 'en',
-  fallbackLng: 'en',
-  interpolation: { escapeValue: false }
-})
 
 function App() {
+  const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
+
+  useEffect(() => {
+    localStorage.setItem('language', language);
+    i18n.changeLanguage(language);
+  }, [language]);
+
   return (
-    <>
-      <SiteNavbar />
+    <Suspense fallback={<div>Loading...</div>}>
+      <SiteNavbar changeLang={setLanguage} />
       <Router>
         <div>
           <Routes>
@@ -42,7 +41,7 @@ function App() {
           </Routes>
         </div>
       </Router>
-    </>
+    </Suspense>
   );
 }
 

@@ -77,5 +77,6 @@
   "form-error-card-expiry": "Please Enter in the format MM/YY.",
   "form-error-inquiry": "Please Enter an Inquiry",
   "form-success": "Form submitted successfully!",
-  "back-to-home": "Back to Home"
+  "back-to-home": "Back to Home",
+  "lang-toggle": "Français"
 }
