@@ -50,9 +50,6 @@ export default function Booking() {
 
 
             <div className='d-flex container justify-content-end'>
-                <Link to={'/'}>
-                    <Button style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '100px' }} className="mx-3 fw-semibold bg-secondary border-0">{t('back-to-home')}</Button>
-                </Link>
                 {activeCard && <Link to={m[2]}>
                     <Button style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '100px' }} className="mx-3 fw-semibold secondary-bg border-0">{t('book-submit')}</Button>
                 </Link>}
