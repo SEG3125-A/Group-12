@@ -6,6 +6,8 @@ import { useTranslation } from 'react-i18next'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import i18n from 'i18next';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 export default function Events() {
     const { t } = useTranslation()
@@ -62,6 +64,12 @@ export default function Events() {
                     locale={i18n.language}
                 />
             </div>
+
+            <div className='container'>
+                <Link to={'/services'}>
+                    <Button style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '100px' }} className="mx-3 fw-semibold bg-secondary border-0">{t('back-to-services')}</Button>
+                </Link>
+            </div>    
         </>
     )
 }
