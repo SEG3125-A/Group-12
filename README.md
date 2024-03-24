@@ -19,3 +19,5 @@
 [Lab 6](https://seg3125-a.github.io/Group-12/lab6/public) (frontend only)
 
 [Lab 8]() (run locally)
+
+[Lab 9]() (same folder as lab 8, run locally)
