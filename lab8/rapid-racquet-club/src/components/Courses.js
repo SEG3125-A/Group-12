@@ -12,9 +12,9 @@ export default function Services() {
             <PageHeader text={t('services-card-title-1')} />
 
             <div className='d-flex justify-content-center' style={{ gap: '32px', marginTop: '40px' }}>
-                <OptionCard imageSrc={'book-book-a-course.png'} cardTitle={t('courses-card-title-1')} description={t('courses-card-description-1')} altText={t('services-card-hyper-1')}/>
-                <OptionCard imageSrc={'book-drop-in.png'} cardTitle={t('courses-card-title-2')} description={t('courses-card-description-2')}/>
-                <OptionCard imageSrc={'book-event.png'} cardTitle={t('courses-card-title-3')} description={t('courses-card-description-3')} />
+                <OptionCard imageSrc={'../book-book-a-course.png'} cardTitle={t('courses-card-title-1')} description={t('courses-card-description-1')} />
+                <OptionCard imageSrc={'../book-drop-in.png'} cardTitle={t('courses-card-title-2')} description={t('courses-card-description-2')} />
+                <OptionCard imageSrc={'../book-event.png'} cardTitle={t('courses-card-title-3')} description={t('courses-card-description-3')} />
             </div>
         </>
     )
