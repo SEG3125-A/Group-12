@@ -8,6 +8,7 @@ import FindATeammate from './components/FindATeammate';
 import Services from './components/Services';
 import ApplicantDetailsBook from './components/ApplicantDetailsBook';
 import ApplicantDetailsPayment from './components/ApplicantDetailsPayment';
+import Courses from './components/Courses';
 import WorkInProgress from './components/WorkInProgress';
 import i18n from 'i18next'; // Import useTranslation here
 import React, { useEffect, useState, Suspense } from 'react';
@@ -46,6 +47,7 @@ function App() {
             <Route path="/contact-us" element={<Contact />} exact />
             <Route path="/book/details" element={<ApplicantDetailsBook />} exact />
             <Route path="/book/payment" element={<ApplicantDetailsPayment />} exact />
+            <Route path="/services/courses" element={<Courses />} exact />
             <Route path="/wip" element={<WorkInProgress />} exact />
           </Routes>
         </div>
