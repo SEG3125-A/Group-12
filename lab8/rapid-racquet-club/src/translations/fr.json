@@ -45,7 +45,7 @@
   "services-page-header": "Services",
   "services-card-title-1": "Cours",
   "services-card-title-2": "Programmes d'accès Libre",
-  "services-card-title-3": "Réserver un terrain pour un événement",
+  "services-card-title-3": "Réserver un Terrain pour un Événement",
   "courses-card-title-1": "Adapté aux débutants.",
   "courses-card-title-2": "Adapté aux intermédiaires.",
   "courses-card-title-3": "Adapté aux joueurs avancés.",
@@ -82,5 +82,6 @@
   "form-success": "Formulaire soumis avec succès !",
   "back-to-home": "Retour à la page d'accueil",
   "back-to-services": "Retour à la page d'accueil.",
+  "available-date-times": "Dates et Heures Disponibles",
   "lang-toggle": "English"
 }

@@ -52,7 +52,8 @@ export default function Events() {
         <>
             <PageHeader text={t('services-card-title-3')} />
 
-            <div className='d-flex align-items-center justify-content-center mt-4'>
+            <div className='d-flex align-items-center justify-content-center mt-4 flex-column'>
+                <h2 className='primary' style={{ fontFamily: 'Inter, serif', fontSize: '20px'}}>{t('available-date-times')}</h2>
                 <Calendar
                     onChange={onChange}
                     value={date}
