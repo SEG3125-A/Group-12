@@ -11,7 +11,7 @@ import ApplicantDetailsPayment from './components/ApplicantDetailsPayment';
 import Courses from './components/Courses';
 import Events from './components/Events';
 import WorkInProgress from './components/WorkInProgress';
-import i18n from 'i18next'; // Import useTranslation here
+import i18n from 'i18next';
 import React, { useEffect, useState, Suspense } from 'react';
 import { initReactI18next } from 'react-i18next';
 import translationsEn from './translations/en.json';
