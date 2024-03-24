@@ -4,6 +4,8 @@ import './globalStyles.css';
 import OptionCard from './OptionCard'
 import PageHeader from './PageHeader'
 import { useTranslation } from 'react-i18next'
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default function Services() {
     const { t } = useTranslation()
@@ -16,6 +18,12 @@ export default function Services() {
                 <OptionCard imageSrc={'../book-drop-in.png'} cardTitle={t('courses-card-title-2')} description={t('courses-card-description-2')} />
                 <OptionCard imageSrc={'../book-event.png'} cardTitle={t('courses-card-title-3')} description={t('courses-card-description-3')} />
             </div>
+
+            <div className='container'>
+                <Link to={'/services'}>
+                    <Button style={{ borderRadius: "8px", width: '347px', height: '48px', marginTop: '100px' }} className="mx-3 fw-semibold bg-secondary border-0">{t('back-to-services')}</Button>
+                </Link>
+            </div>    
         </>
     )
 }
